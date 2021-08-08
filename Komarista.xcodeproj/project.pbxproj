@@ -1,0 +1,794 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0826552C938792D663CBAED2 /* Pods_Komarista_KomaristaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */; };
+		733DA7B3281CA07A907D8F4A /* Pods_KomaristaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */; };
+		9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */; };
+		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
+		C7276ED526BF11BF007D2512 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7276ED426BF11BF007D2512 /* GoogleDelegate.swift */; };
+		C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297ED26BF05F70022716D /* AppDelegate.swift */; };
+		C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297EF26BF05F70022716D /* SceneDelegate.swift */; };
+		C79297F226BF05F70022716D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297F126BF05F70022716D /* ContentView.swift */; };
+		C79297F426BF05F80022716D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79297F326BF05F80022716D /* Assets.xcassets */; };
+		C79297F726BF05F80022716D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79297F626BF05F80022716D /* Preview Assets.xcassets */; };
+		C79297FA26BF05F80022716D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79297F826BF05F80022716D /* LaunchScreen.storyboard */; };
+		C792980526BF05F80022716D /* KomaristaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792980426BF05F80022716D /* KomaristaTests.swift */; };
+		C792981026BF05F80022716D /* KomaristaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792980F26BF05F80022716D /* KomaristaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C792980126BF05F80022716D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C79297E226BF05F70022716D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C79297E926BF05F70022716D;
+			remoteInfo = Komarista;
+		};
+		C792980C26BF05F80022716D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C79297E226BF05F70022716D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C79297E926BF05F70022716D;
+			remoteInfo = Komarista;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		042B7C4741254E0FAB73C39A /* Pods-Komarista.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista.debug.xcconfig"; path = "Target Support Files/Pods-Komarista/Pods-Komarista.debug.xcconfig"; sourceTree = "<group>"; };
+		26EA7F5C60316E26ED873929 /* Pods-Komarista-KomaristaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista-KomaristaUITests.release.xcconfig"; path = "Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44BFE8F6F37ECE3725E6C2D0 /* Pods-Komarista.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista.release.xcconfig"; path = "Target Support Files/Pods-Komarista/Pods-Komarista.release.xcconfig"; sourceTree = "<group>"; };
+		461E8B7BCB7F9584F4FAE1DF /* Pods-KomaristaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomaristaTests.release.xcconfig"; path = "Target Support Files/Pods-KomaristaTests/Pods-KomaristaTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80709A091B868A4EB7CA4D73 /* Pods-KomaristaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomaristaTests.debug.xcconfig"; path = "Target Support Files/Pods-KomaristaTests/Pods-KomaristaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomaristaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista_KomaristaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7276ED426BF11BF007D2512 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		C79297EA26BF05F70022716D /* Komarista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komarista.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79297ED26BF05F70022716D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C79297EF26BF05F70022716D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C79297F126BF05F70022716D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C79297F326BF05F80022716D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C79297F626BF05F80022716D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C79297F926BF05F80022716D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C79297FB26BF05F80022716D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C792980026BF05F80022716D /* KomaristaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomaristaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C792980426BF05F80022716D /* KomaristaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomaristaTests.swift; sourceTree = "<group>"; };
+		C792980626BF05F80022716D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C792980B26BF05F80022716D /* KomaristaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomaristaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C792980F26BF05F80022716D /* KomaristaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomaristaUITests.swift; sourceTree = "<group>"; };
+		C792981126BF05F80022716D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista-KomaristaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C79297E726BF05F70022716D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C79297FD26BF05F80022716D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733DA7B3281CA07A907D8F4A /* Pods_KomaristaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C792980826BF05F80022716D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0826552C938792D663CBAED2 /* Pods_Komarista_KomaristaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52D34732277E73B991DBDA46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */,
+				A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */,
+				9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAF3EEB6C2AF2E2D850D16C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				042B7C4741254E0FAB73C39A /* Pods-Komarista.debug.xcconfig */,
+				44BFE8F6F37ECE3725E6C2D0 /* Pods-Komarista.release.xcconfig */,
+				F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */,
+				26EA7F5C60316E26ED873929 /* Pods-Komarista-KomaristaUITests.release.xcconfig */,
+				80709A091B868A4EB7CA4D73 /* Pods-KomaristaTests.debug.xcconfig */,
+				461E8B7BCB7F9584F4FAE1DF /* Pods-KomaristaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C79297E126BF05F70022716D = {
+			isa = PBXGroup;
+			children = (
+				C79297EC26BF05F70022716D /* Komarista */,
+				C792980326BF05F80022716D /* KomaristaTests */,
+				C792980E26BF05F80022716D /* KomaristaUITests */,
+				C79297EB26BF05F70022716D /* Products */,
+				AAF3EEB6C2AF2E2D850D16C9 /* Pods */,
+				52D34732277E73B991DBDA46 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C79297EB26BF05F70022716D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C79297EA26BF05F70022716D /* Komarista.app */,
+				C792980026BF05F80022716D /* KomaristaTests.xctest */,
+				C792980B26BF05F80022716D /* KomaristaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C79297EC26BF05F70022716D /* Komarista */ = {
+			isa = PBXGroup;
+			children = (
+				C79297ED26BF05F70022716D /* AppDelegate.swift */,
+				C79297EF26BF05F70022716D /* SceneDelegate.swift */,
+				C79297F126BF05F70022716D /* ContentView.swift */,
+				C7276ED426BF11BF007D2512 /* GoogleDelegate.swift */,
+				C79297F326BF05F80022716D /* Assets.xcassets */,
+				C79297F826BF05F80022716D /* LaunchScreen.storyboard */,
+				C79297FB26BF05F80022716D /* Info.plist */,
+				C7276EA726BF0884007D2512 /* GoogleService-Info.plist */,
+				C79297F526BF05F80022716D /* Preview Content */,
+			);
+			path = Komarista;
+			sourceTree = "<group>";
+		};
+		C79297F526BF05F80022716D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C79297F626BF05F80022716D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C792980326BF05F80022716D /* KomaristaTests */ = {
+			isa = PBXGroup;
+			children = (
+				C792980426BF05F80022716D /* KomaristaTests.swift */,
+				C792980626BF05F80022716D /* Info.plist */,
+			);
+			path = KomaristaTests;
+			sourceTree = "<group>";
+		};
+		C792980E26BF05F80022716D /* KomaristaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C792980F26BF05F80022716D /* KomaristaUITests.swift */,
+				C792981126BF05F80022716D /* Info.plist */,
+			);
+			path = KomaristaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C79297E926BF05F70022716D /* Komarista */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C792981426BF05F80022716D /* Build configuration list for PBXNativeTarget "Komarista" */;
+			buildPhases = (
+				B3D3870AD607787968801353 /* [CP] Check Pods Manifest.lock */,
+				C79297E626BF05F70022716D /* Sources */,
+				C79297E726BF05F70022716D /* Frameworks */,
+				C79297E826BF05F70022716D /* Resources */,
+				9519ABCEF58D2486A6B75266 /* [CP] Embed Pods Frameworks */,
+				E31CBD872BBC2DC6B1A4D9CA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Komarista;
+			productName = Komarista;
+			productReference = C79297EA26BF05F70022716D /* Komarista.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C79297FF26BF05F80022716D /* KomaristaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C792981726BF05F80022716D /* Build configuration list for PBXNativeTarget "KomaristaTests" */;
+			buildPhases = (
+				43D59CF98908B09F6C24E831 /* [CP] Check Pods Manifest.lock */,
+				C79297FC26BF05F80022716D /* Sources */,
+				C79297FD26BF05F80022716D /* Frameworks */,
+				C79297FE26BF05F80022716D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C792980226BF05F80022716D /* PBXTargetDependency */,
+			);
+			name = KomaristaTests;
+			productName = KomaristaTests;
+			productReference = C792980026BF05F80022716D /* KomaristaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C792980A26BF05F80022716D /* KomaristaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C792981A26BF05F80022716D /* Build configuration list for PBXNativeTarget "KomaristaUITests" */;
+			buildPhases = (
+				F25F3C889287B2B3A73EBFA6 /* [CP] Check Pods Manifest.lock */,
+				C792980726BF05F80022716D /* Sources */,
+				C792980826BF05F80022716D /* Frameworks */,
+				C792980926BF05F80022716D /* Resources */,
+				B17C25445896794C65A6D004 /* [CP] Embed Pods Frameworks */,
+				6DAE5956A4A9376E26E86D48 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C792980D26BF05F80022716D /* PBXTargetDependency */,
+			);
+			name = KomaristaUITests;
+			productName = KomaristaUITests;
+			productReference = C792980B26BF05F80022716D /* KomaristaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C79297E226BF05F70022716D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					C79297E926BF05F70022716D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					C79297FF26BF05F80022716D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C79297E926BF05F70022716D;
+					};
+					C792980A26BF05F80022716D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C79297E926BF05F70022716D;
+					};
+				};
+			};
+			buildConfigurationList = C79297E526BF05F70022716D /* Build configuration list for PBXProject "Komarista" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C79297E126BF05F70022716D;
+			productRefGroup = C79297EB26BF05F70022716D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C79297E926BF05F70022716D /* Komarista */,
+				C79297FF26BF05F80022716D /* KomaristaTests */,
+				C792980A26BF05F80022716D /* KomaristaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C79297E826BF05F70022716D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C79297FA26BF05F80022716D /* LaunchScreen.storyboard in Resources */,
+				C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */,
+				C79297F726BF05F80022716D /* Preview Assets.xcassets in Resources */,
+				C79297F426BF05F80022716D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C79297FE26BF05F80022716D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C792980926BF05F80022716D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43D59CF98908B09F6C24E831 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KomaristaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DAE5956A4A9376E26E86D48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9519ABCEF58D2486A6B75266 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B17C25445896794C65A6D004 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3D3870AD607787968801353 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Komarista-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E31CBD872BBC2DC6B1A4D9CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Komarista/Pods-Komarista-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F25F3C889287B2B3A73EBFA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Komarista-KomaristaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C79297E626BF05F70022716D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */,
+				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
+				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
+				C7276ED526BF11BF007D2512 /* GoogleDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C79297FC26BF05F80022716D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C792980526BF05F80022716D /* KomaristaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C792980726BF05F80022716D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C792981026BF05F80022716D /* KomaristaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C792980226BF05F80022716D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C79297E926BF05F70022716D /* Komarista */;
+			targetProxy = C792980126BF05F80022716D /* PBXContainerItemProxy */;
+		};
+		C792980D26BF05F80022716D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C79297E926BF05F70022716D /* Komarista */;
+			targetProxy = C792980C26BF05F80022716D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C79297F826BF05F80022716D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C79297F926BF05F80022716D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C792981226BF05F80022716D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C792981326BF05F80022716D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C792981526BF05F80022716D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042B7C4741254E0FAB73C39A /* Pods-Komarista.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Komarista/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Komarista/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.Komarista";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C792981626BF05F80022716D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44BFE8F6F37ECE3725E6C2D0 /* Pods-Komarista.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Komarista/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Komarista/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.Komarista";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C792981826BF05F80022716D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80709A091B868A4EB7CA4D73 /* Pods-KomaristaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KomaristaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.KomaristaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Komarista.app/Komarista";
+			};
+			name = Debug;
+		};
+		C792981926BF05F80022716D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 461E8B7BCB7F9584F4FAE1DF /* Pods-KomaristaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KomaristaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.KomaristaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Komarista.app/Komarista";
+			};
+			name = Release;
+		};
+		C792981B26BF05F80022716D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KomaristaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.KomaristaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Komarista;
+			};
+			name = Debug;
+		};
+		C792981C26BF05F80022716D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26EA7F5C60316E26ED873929 /* Pods-Komarista-KomaristaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KomaristaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x-softy.KomaristaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Komarista;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C79297E526BF05F70022716D /* Build configuration list for PBXProject "Komarista" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C792981226BF05F80022716D /* Debug */,
+				C792981326BF05F80022716D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C792981426BF05F80022716D /* Build configuration list for PBXNativeTarget "Komarista" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C792981526BF05F80022716D /* Debug */,
+				C792981626BF05F80022716D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C792981726BF05F80022716D /* Build configuration list for PBXNativeTarget "KomaristaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C792981826BF05F80022716D /* Debug */,
+				C792981926BF05F80022716D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C792981A26BF05F80022716D /* Build configuration list for PBXNativeTarget "KomaristaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C792981B26BF05F80022716D /* Debug */,
+				C792981C26BF05F80022716D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C79297E226BF05F70022716D /* Project object */;
+}
