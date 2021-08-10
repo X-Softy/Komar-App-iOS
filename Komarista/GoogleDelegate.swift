@@ -8,6 +8,7 @@
 import Firebase
 import GoogleSignIn
 
+// TODO: Add as repository
 class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
     @Published var signedIn: Bool = false
 
