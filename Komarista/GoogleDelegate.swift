@@ -9,7 +9,7 @@ import Firebase
 import GoogleSignIn
 
 // TODO: Add as repository
-class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
+class GoogleDelegate1: NSObject, GIDSignInDelegate, ObservableObject {
     @Published var signedIn: Bool = false
 
     func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {

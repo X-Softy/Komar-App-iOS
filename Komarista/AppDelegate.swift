@@ -11,13 +11,11 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let googleDelegate = GoogleDelegate()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.delegate = googleDelegate
+        GIDSignIn.sharedInstance()?.delegate = (DefaultAuthRepository.shared as! GIDSignInDelegate)
         return true
     }
 

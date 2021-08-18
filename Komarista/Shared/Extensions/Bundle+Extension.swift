@@ -9,9 +9,9 @@ import Foundation
 
 extension Bundle {
     var scheme: HTTPSchemeType {
-        HTTPSchemeType(rawValue: infoDictionary?["API_SCHEME"] as! String)!
+        .secured // HTTPSchemeType(rawValue: infoDictionary?["API_SCHEME"] as! String)!
     }
     var host: String {
-        infoDictionary?["API_HOST"] as! String
+        "europe-west3-komar-app.cloudfunctions.net" // infoDictionary?["API_HOST"] as! String
     }
 }

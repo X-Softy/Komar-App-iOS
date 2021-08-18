@@ -7,29 +7,73 @@
 
 import SwiftUI
 import GoogleSignIn
+import Combine
 
 struct ContentView: View {
-    @EnvironmentObject var googleDelegate: GoogleDelegate
+    @State var signedIn: Bool = false
+    private let auth: AuthRepository = DefaultAuthRepository.shared
+    private let userSession: UserSession = .shared
+    private let foo = FooRepository()
+
+    class FooRepository: APIRepository {
+        var bag: Set<AnyCancellable> = .init()
+
+        struct Bar: Decodable {
+            let id: String
+            let title: String
+        }
+
+        func foo() -> AnyPublisher<[Bar], Error> {
+            call(with: requestBuilder
+                           .set(path: "/api/categories")
+                           .set(method: HTTPMethodGet()))
+        }
+    }
 
     var body: some View {
         Group {
-            if googleDelegate.signedIn {
+            if signedIn {
                 VStack {
                     Button(action: {
-                        GIDSignIn.sharedInstance()?.signOut()
-                        googleDelegate.signedIn = false
+                        auth.signOut()
+                        print("Debug.SignIn: success:", userSession.userId ?? "nil", userSession.authorization ?? "nil")
+                        signedIn = false
                     }) {
                         Text("Sign Out")
                     }
                 }
             } else {
                 Button(action: {
-                    GIDSignIn.sharedInstance()?.signIn()
+                    auth.signIn { result in
+                        switch result {
+                        case .success:
+                            print("Debug.SignIn: success:", userSession.userId ?? "nil", userSession.authorization ?? "nil")
+                            categories()
+                        case .failure(let error):
+                            print("Debug.SignIn: failure:", error.localizedDescription)
+                        }
+                    }
                 }) {
                     Text("Sign In")
                 }
             }
         }
+    }
+
+    func categories() {
+        foo.foo()
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Debug.Categories: success")
+                case .failure(let error):
+                    print("Debug.Categories: failure:", error.localizedDescription)
+                }
+            } receiveValue: { categories in
+                print("Debug.Categories: success:", categories)
+                signedIn = true
+            }
+            .store(in: &foo.bag)
     }
 }
 

@@ -18,6 +18,8 @@
 		C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944E526CC424400C04962 /* APIRequestBuilderFactory.swift */; };
 		C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */; };
 		C78944F526CD0FE000C04962 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944F426CD0FE000C04962 /* APIRepository.swift */; };
+		C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789450426CD39BC00C04962 /* AuthRepository.swift */; };
+		C789450A26CD3AD000C04962 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789450926CD3AD000C04962 /* UserSession.swift */; };
 		C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297ED26BF05F70022716D /* AppDelegate.swift */; };
 		C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297EF26BF05F70022716D /* SceneDelegate.swift */; };
 		C79297F226BF05F70022716D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297F126BF05F70022716D /* ContentView.swift */; };
@@ -61,6 +63,8 @@
 		C78944E526CC424400C04962 /* APIRequestBuilderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderFactory.swift; sourceTree = "<group>"; };
 		C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		C78944F426CD0FE000C04962 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		C789450426CD39BC00C04962 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		C789450926CD3AD000C04962 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		C79297EA26BF05F70022716D /* Komarista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komarista.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79297ED26BF05F70022716D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79297EF26BF05F70022716D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		C78944E426CC421600C04962 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C789450926CD3AD000C04962 /* UserSession.swift */,
 				C78944F426CD0FE000C04962 /* APIRepository.swift */,
 				C78944E526CC424400C04962 /* APIRequestBuilderFactory.swift */,
 			);
@@ -170,6 +175,46 @@
 				C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C78944FF26CD38B600C04962 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C789450026CD38E600C04962 /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C789450026CD38E600C04962 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C789450126CD38F300C04962 /* Data */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C789450126CD38F300C04962 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C789450226CD398700C04962 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C789450226CD398700C04962 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C789450326CD39A600C04962 /* Auth */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C789450326CD39A600C04962 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C789450426CD39BC00C04962 /* AuthRepository.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		C79297E126BF05F70022716D = {
@@ -197,6 +242,7 @@
 		C79297EC26BF05F70022716D /* Komarista */ = {
 			isa = PBXGroup;
 			children = (
+				C78944FF26CD38B600C04962 /* Modules */,
 				C78944C326CA97E800C04962 /* Shared */,
 				C79297ED26BF05F70022716D /* AppDelegate.swift */,
 				C79297EF26BF05F70022716D /* SceneDelegate.swift */,
@@ -515,8 +561,10 @@
 				C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */,
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
+				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
+				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C7276ED526BF11BF007D2512 /* GoogleDelegate.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,

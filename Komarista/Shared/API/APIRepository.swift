@@ -15,24 +15,14 @@ protocol APIRepository: WebRepository {
 
 extension APIRepository {
     private var factory: APIRequestBuilderFactory { .default }
+    private var userSession: UserSession { .shared }
 
     var requestBuilder: HostSetterReturnType { factory.requestBuilder }
 
     func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, Error> {
-        let request = requestBuilder
+        var request = requestBuilder
             .build()
-         // .setValue("Bearer ${Token}", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(userSession.authorization ?? "")", forHTTPHeaderField: "Authorization")
         return call(request: request)
-    }
-}
-
-// TODO: Delete
-class FooRepository: APIRepository {
-    struct Bar: Decodable {}
-
-    func foo() -> AnyPublisher<Bar, Error> {
-        call(with: requestBuilder
-                       .set(path: "/categories")
-                       .set(method: HTTPMethodGet()))
     }
 }
