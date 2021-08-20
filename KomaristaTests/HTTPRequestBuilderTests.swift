@@ -10,35 +10,33 @@ import XCTest
 
 class HTTPRequestBuilderTests: XCTestCase {
     private var requestBuilder: HTTPRequestBuilder { HTTPRequestBuilderImpl.createInstance() }
-    private let host: String = "www.example.com"
+    private let baseURL: String = "www.example.com/base/url"
     private let path: String = "/some/path"
-    private var securedHost: String { "https://\(host)" }
-    private var notSecuredHost: String { "http://\(host)" }
-    private var securedHostWithPath: String { "\(securedHost)\(path)" }
-    private var notSecuredHostWithPath: String { "\(notSecuredHost)\(path)" }
+    private var securedBaseURL: String { "https://\(baseURL)" }
+    private var notSecuredBaseURL: String { "http://\(baseURL)" }
+    private var securedBaseURLWithPath: String { "\(securedBaseURL)\(path)" }
+    private var notSecuredBaseURLWithPath: String { "\(notSecuredBaseURL)\(path)" }
 
-    /* Test set(scheme:) set(host:) */
+    /* Test set(baseURL:) */
 
-    func testSchemeAndHost() {
+    func testBaseURL() {
         // when
         let securedRequest = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(method: HTTPMethodGet())
             .build()
 
         // than
-        XCTAssertEqual(securedRequest.url?.absoluteString, securedHost)
+        XCTAssertEqual(securedRequest.url?.absoluteString, securedBaseURL)
 
         // when
         let notSecuredRequest = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(method: HTTPMethodPost())
             .build()
 
         // than
-        XCTAssertEqual(notSecuredRequest.url?.absoluteString, notSecuredHost)
+        XCTAssertEqual(notSecuredRequest.url?.absoluteString, notSecuredBaseURL)
     }
 
     /* Test set(path:) */
@@ -46,14 +44,13 @@ class HTTPRequestBuilderTests: XCTestCase {
     func testPath() {
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(path: path)
             .set(method: HTTPMethodPatch())
             .build()
 
         // than
-        XCTAssertEqual(request.url?.absoluteString, securedHostWithPath)
+        XCTAssertEqual(request.url?.absoluteString, securedBaseURLWithPath)
     }
 
     /* Test setUrlParam(key:, value:) */
@@ -64,15 +61,14 @@ class HTTPRequestBuilderTests: XCTestCase {
         let value = "Value"
 
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .setUrlParam(key: key, value: value)
             .set(method: HTTPMethodDelete())
             .build()
 
         // than
-        XCTAssertEqual(request.url?.absoluteString, "\(notSecuredHostWithPath)?\(key)=\(value)")
+        XCTAssertEqual(request.url?.absoluteString, "\(notSecuredBaseURLWithPath)?\(key)=\(value)")
     }
 
     func testSet2UrlParam() {
@@ -84,8 +80,7 @@ class HTTPRequestBuilderTests: XCTestCase {
         let val2 = "Value2"
 
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .setUrlParam(key: key1, value: val1)
             .setUrlParam(key: key2, value: val2)
             .set(method: HTTPMethodGet())
@@ -94,8 +89,8 @@ class HTTPRequestBuilderTests: XCTestCase {
         // than
         let actual = request.url?.absoluteString
 
-        let expected1 = "\(securedHost)?\(key1)=\(val1)&\(key2)=\(val2)"
-        let expected2 = "\(securedHost)?\(key2)=\(val2)&\(key1)=\(val1)"
+        let expected1 = "\(securedBaseURL)?\(key1)=\(val1)&\(key2)=\(val2)"
+        let expected2 = "\(securedBaseURL)?\(key2)=\(val2)&\(key1)=\(val1)"
 
         XCTAssert(actual == expected1 || actual == expected2)
     }
@@ -111,8 +106,7 @@ class HTTPRequestBuilderTests: XCTestCase {
         ]
 
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .set(urlParams: urlParams)
             .set(method: HTTPMethodPost())
@@ -124,7 +118,7 @@ class HTTPRequestBuilderTests: XCTestCase {
         let urlParamsList = urlParams.map { ($0.key, $0.value) }
 
         for permutaion in permutations(of: urlParamsList) {
-            var possibleExpected = "\(notSecuredHostWithPath)?"
+            var possibleExpected = "\(notSecuredBaseURLWithPath)?"
             for (key, value) in permutaion {
                 possibleExpected.append("\(key)=\(value)&")
             }
@@ -146,8 +140,7 @@ class HTTPRequestBuilderTests: XCTestCase {
 
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .setHeader(key: key, value: value)
             .set(method: HTTPMethodPatch())
             .build()
@@ -172,8 +165,7 @@ class HTTPRequestBuilderTests: XCTestCase {
 
         // when
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .set(headers: headers)
             .set(method: HTTPMethodDelete())
@@ -190,8 +182,7 @@ class HTTPRequestBuilderTests: XCTestCase {
     func testMethodGet() {
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(method: HTTPMethodGet())
             .build()
 
@@ -203,8 +194,7 @@ class HTTPRequestBuilderTests: XCTestCase {
     func testMethodPost() {
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(path: path)
             .set(method: HTTPMethodPost())
             .build()
@@ -217,8 +207,7 @@ class HTTPRequestBuilderTests: XCTestCase {
     func testMethodPatch() {
         // when
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(method: HTTPMethodPatch())
             .build()
 
@@ -230,8 +219,7 @@ class HTTPRequestBuilderTests: XCTestCase {
     func testMethodDelete() {
         // when
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .set(method: HTTPMethodDelete())
             .build()
@@ -252,8 +240,7 @@ class HTTPRequestBuilderTests: XCTestCase {
 
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(method: HTTPMethodPost())
             .set(contentType: ContentTypeUrlEncoded())
             .setBody(key: key1, value: val1)
@@ -282,8 +269,7 @@ class HTTPRequestBuilderTests: XCTestCase {
 
         // when
         let request = requestBuilder
-            .set(scheme: .notSecured)
-            .set(host: host)
+            .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .set(method: HTTPMethodPatch())
             .set(contentType: ContentTypeJson())
@@ -307,8 +293,7 @@ class HTTPRequestBuilderTests: XCTestCase {
 
         // when
         let request = requestBuilder
-            .set(scheme: .secured)
-            .set(host: host)
+            .set(baseURL: securedBaseURL)
             .set(path: path)
             .set(method: HTTPMethodDelete())
             .set(contentType: ContentTypeRaw())

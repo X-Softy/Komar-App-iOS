@@ -9,30 +9,19 @@ import Foundation
 
 /**
 
- Scheme --- Host --- Path --- URL Parameters? --- Headers? --- Method --- GET --- Build
-                                                                     '--- POST | PATCH | DELETE --- Content Type? --- Content? --- Build
+ Host --- Path --- URL Parameters? --- Headers? --- Method --- GET --- Build
+                                                          '--- POST | PATCH | DELETE --- Content Type? --- Content? --- Build
 
  */
 
 // Initial interface known to user
-protocol HTTPRequestBuilder: SchemeSetterHTTPRequestBuilder {}
+protocol HTTPRequestBuilder: BaseURLSetterHTTPRequestBuilder {}
 
 // Interfaces known to user
 
-/* Scheme */
-protocol SchemeSetterHTTPRequestBuilder {
-    func set(scheme: HTTPSchemeType) -> HostSetterHTTPRequestBuilder
-}
-
-/// Scheme Types
-enum HTTPSchemeType: String {
-    case notSecured = "http"
-    case secured = "https"
-}
-
-/* Host */
-protocol HostSetterHTTPRequestBuilder {
-    func set(host: String) -> HostSetterReturnType
+/* Base URL */
+protocol BaseURLSetterHTTPRequestBuilder {
+    func set(baseURL: String) -> HostSetterReturnType
 }
 
 typealias HostSetterReturnType = PathSetterHTTPRequestBuilder &
@@ -181,8 +170,7 @@ protocol UrlRequestBuilderHTTPRequestBuilder {
 }
 
 fileprivate typealias HTTPRequestBuilderProtocols = HTTPRequestBuilder &
-                                                    SchemeSetterHTTPRequestBuilder &
-                                                    HostSetterHTTPRequestBuilder &
+                                                    BaseURLSetterHTTPRequestBuilder &
                                                     PathSetterHTTPRequestBuilder &
                                                     UrlParameterSetterHTTPRequestBuilder &
                                                     HeaderSetterHTTPRequestBuilder &
@@ -209,18 +197,16 @@ class HTTPRequestBuilderImpl: HTTPRequestBuilderProtocols {
 
     // protocol implementations
 
-    func set(scheme: HTTPSchemeType) -> HostSetterHTTPRequestBuilder {
-        components.scheme = scheme.rawValue
-        return self
-    }
-
-    func set(host: String) -> HostSetterReturnType {
-        components.host = host
+    func set(baseURL: String) -> HostSetterReturnType {
+        let url = URL(string: baseURL)!
+        components.scheme = url.scheme
+        components.host = url.host
+        components.path = url.path
         return self
     }
 
     func set(path: String) -> PathSetterReturnType {
-        components.path = path
+        components.path.append(path)
         return self
     }
 

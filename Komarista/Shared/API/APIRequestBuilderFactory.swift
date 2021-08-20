@@ -8,21 +8,17 @@
 import Foundation
 
 class APIRequestBuilderFactory {
-    private let scheme: HTTPSchemeType
-    private let host: String
+    private let baseURL: String
 
     static let `default`: APIRequestBuilderFactory = .init()
 
-    init(scheme: HTTPSchemeType = Bundle.main.scheme,
-         host: String = Bundle.main.host) {
-        self.scheme = scheme
-        self.host = host
+    init(baseURL: String = Bundle.main.baseURL) {
+        self.baseURL = baseURL
     }
 
     var requestBuilder: HostSetterReturnType {
         let requestBuilder = HTTPRequestBuilderImpl.createInstance()
         return requestBuilder
-            .set(scheme: scheme)
-            .set(host: host)
+            .set(baseURL: baseURL)
     }
 }
