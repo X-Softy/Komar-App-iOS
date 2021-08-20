@@ -12,6 +12,7 @@
 		9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */; };
 		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
 		C7276ED526BF11BF007D2512 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7276ED426BF11BF007D2512 /* GoogleDelegate.swift */; };
+		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
 		C78944DA26CAD41700C04962 /* HTTPRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944D926CAD41700C04962 /* HTTPRequestBuilderTests.swift */; };
@@ -57,6 +58,7 @@
 		A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista_KomaristaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7276ED426BF11BF007D2512 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
 		C78944D926CAD41700C04962 /* HTTPRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilderTests.swift; sourceTree = "<group>"; };
@@ -132,9 +134,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C75B1CF326CFA8C900C9C527 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C75B1CF726CFB0B300C9C527 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C75B1CF726CFB0B300C9C527 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C78944C326CA97E800C04962 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C75B1CF326CFA8C900C9C527 /* Domain */,
 				C78944E426CC421600C04962 /* API */,
 				C78944CF26CAA7A900C04962 /* Utils */,
 				C78944EB26CD0E2000C04962 /* Extensions */,
@@ -188,17 +207,17 @@
 		C789450026CD38E600C04962 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C789450126CD38F300C04962 /* Data */,
+				C789450126CD38F300C04962 /* Domain */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		C789450126CD38F300C04962 /* Data */ = {
+		C789450126CD38F300C04962 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				C789450226CD398700C04962 /* Repositories */,
 			);
-			path = Data;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C789450226CD398700C04962 /* Repositories */ = {
@@ -568,6 +587,7 @@
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C7276ED526BF11BF007D2512 /* GoogleDelegate.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
+				C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */,
 				C78944F526CD0FE000C04962 /* APIRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

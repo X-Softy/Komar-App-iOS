@@ -10,7 +10,7 @@ import Firebase
 import GoogleSignIn
 
 protocol AuthRepository {
-    typealias SignInCallback = (Result<Void, Error>) -> Void
+    typealias SignInCallback = (Result<Void, ErrorEntity>) -> Void
     func signIn(_ callback: @escaping SignInCallback)
     func signOut()
 }
@@ -38,13 +38,13 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
 
     func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {
         if let error = error {
-            return failure(error)
+            return failure(.init(from: error))
         }
 
         guard let authentication = user?.authentication,
               let idToken = authentication.idToken
         else {
-            return // failure(error: error) TODO
+            return failure(.init())
         }
 
         let credential = GoogleAuthProvider.credential(withIDToken: idToken,
@@ -54,14 +54,14 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
             guard let self = self else { return }
 
             if let error = error {
-                return self.failure(error)
+                return self.failure(.init(from: error))
             }
 
             Auth.auth().currentUser?.getIDToken(completion: { [weak self] result, error in
                 guard let self = self else { return }
 
                 if let error = error {
-                    return self.failure(error)
+                    return self.failure(.init(from: error))
                 }
 
                 self.userSession.set(authorization: result, userId: user?.profile?.email)
@@ -75,8 +75,8 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
         clean()?(.success(()))
     }
 
-    private func failure(_ error: Error) {
-        clean()?(.success(()))
+    private func failure(_ error: ErrorEntity) {
+        clean()?(.failure(error))
     }
 
     private func clean() -> SignInCallback? {

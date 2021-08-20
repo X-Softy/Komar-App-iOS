@@ -273,7 +273,7 @@ class HTTPRequestBuilderImpl: HTTPRequestBuilderProtocols {
         return self
     }
 
-    public func setBody<T: Encodable>(json obj: T) -> JsonContentSetterReturnType {
+    func setBody<T: Encodable>(json obj: T) -> JsonContentSetterReturnType {
         do {
             let data = try encoder.encode(obj)
             request.httpBody = data
@@ -288,27 +288,7 @@ class HTTPRequestBuilderImpl: HTTPRequestBuilderProtocols {
         return self
     }
 
-    public func build() -> URLRequest {
-        #if DEBUG
-        // Log Request before returning
-        print("""
-
-
-
-        HTTPRequestBuilder
-        Host:         \(components.host ?? "nil")
-        Path:         \(components.path)
-        URL:          \(String(describing: request.url))
-        Method:       \(request.httpMethod ?? "nil")
-        Headers: \(request.allHTTPHeaderFields as AnyObject)
-        Content-Type: \(request.allHTTPHeaderFields?["Content-Type"] ?? "nil")
-        Body:         \(String(decoding: request.httpBody ?? .init(), as: UTF8.self))
-
-
-
-        """)
-        #endif
-
+    func build() -> URLRequest {
         return request
     }
 }

@@ -10,7 +10,7 @@ import Combine
 
 protocol APIRepository: WebRepository {
     var requestBuilder: HostSetterReturnType { get }
-    func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, Error>
+    func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, ErrorEntity>
 }
 
 extension APIRepository {
@@ -19,10 +19,17 @@ extension APIRepository {
 
     var requestBuilder: HostSetterReturnType { factory.requestBuilder }
 
-    func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, Error> {
+    func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, ErrorEntity> {
         var request = requestBuilder
             .build()
         request.setValue("Bearer \(userSession.authorization ?? "")", forHTTPHeaderField: "Authorization")
         return call(request: request)
+            .mapError { error in
+                if case .invalidStatusCode(let code, let data) = error, code == 406 {
+                    do { return try JSONDecoder().decode(ErrorEntity.self, from: data) } catch {}
+                }
+                return .init(message: error.localizedDescription)
+            }
+            .eraseToAnyPublisher()
     }
 }
