@@ -8,7 +8,5 @@
 import Foundation
 
 extension Bundle {
-    var baseURL: String {
-        "https://europe-west3-komar-app.cloudfunctions.net/api" // infoDictionary?["API_HOST"] as! String
-    }
+    var baseURL: String { infoDictionary?["BASE_URL"] as! String }
 }

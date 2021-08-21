@@ -25,7 +25,7 @@ struct ContentView: View {
 
         func foo() -> AnyPublisher<[Bar], ErrorEntity> {
             call(with: requestBuilder
-                           .set(path: "/rooms/details/vhw1mIIYqNfgWDlP7bfW12")
+                           .set(path: "/categories")
                            .set(method: HTTPMethodGet()))
         }
     }

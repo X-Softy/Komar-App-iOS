@@ -67,5 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>BASE_URL</key>
+	<string>https://europe-west3-komar-app.cloudfunctions.net/api</string>
 </dict>
 </plist>
