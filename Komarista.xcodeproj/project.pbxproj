@@ -11,6 +11,10 @@
 		733DA7B3281CA07A907D8F4A /* Pods_KomaristaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */; };
 		9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */; };
 		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
+		C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864EB26D2A29F00BB0645 /* CategoryList.swift */; };
+		C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */; };
+		C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F926D2A38A00BB0645 /* CategoryListService.swift */; };
+		C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -65,6 +69,10 @@
 		9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomaristaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista_KomaristaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C72864EB26D2A29F00BB0645 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		C72864F926D2A38A00BB0645 /* CategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListService.swift; sourceTree = "<group>"; };
+		C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRepository.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -150,6 +158,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C72864E926D2A26F00BB0645 /* Category List */ = {
+			isa = PBXGroup;
+			children = (
+				C72864EA26D2A28700BB0645 /* Presentation */,
+				C72864F826D2A34700BB0645 /* Domain */,
+			);
+			path = "Category List";
+			sourceTree = "<group>";
+		};
+		C72864EA26D2A28700BB0645 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C72864EB26D2A29F00BB0645 /* CategoryList.swift */,
+				C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C72864F826D2A34700BB0645 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C72864F926D2A38A00BB0645 /* CategoryListService.swift */,
+				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,35 +239,28 @@
 		C78944FF26CD38B600C04962 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C789450026CD38E600C04962 /* Auth */,
+				C789450026CD38E600C04962 /* Sign In */,
+				C72864E926D2A26F00BB0645 /* Category List */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		C789450026CD38E600C04962 /* Auth */ = {
+		C789450026CD38E600C04962 /* Sign In */ = {
 			isa = PBXGroup;
 			children = (
 				C7B5408B26D138A10011192E /* Presentation */,
 				C789450126CD38F300C04962 /* Domain */,
 			);
-			path = Auth;
+			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		C789450126CD38F300C04962 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C7B540A726D13A6B0011192E /* Services */,
-				C789450226CD398700C04962 /* Repositories */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		C789450226CD398700C04962 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
+				C7B540A826D13AAF0011192E /* AuthService.swift */,
 				C789450426CD39BC00C04962 /* AuthRepository.swift */,
 			);
-			path = Repositories;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C79297E126BF05F70022716D = {
@@ -304,26 +332,10 @@
 		C7B5408B26D138A10011192E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C7B540A026D1398F0011192E /* Sign In */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		C7B540A026D1398F0011192E /* Sign In */ = {
-			isa = PBXGroup;
-			children = (
 				C7B540B026D13B470011192E /* SignIn.swift */,
 				C7B5409B26D139630011192E /* SignInViewModel.swift */,
 			);
-			path = "Sign In";
-			sourceTree = "<group>";
-		};
-		C7B540A726D13A6B0011192E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C7B540A826D13AAF0011192E /* AuthService.swift */,
-			);
-			path = Services;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,10 +617,13 @@
 				C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */,
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
+				C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */,
 				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
+				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
+				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
 				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
 				C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */,
 				C7B5409C26D139630011192E /* SignInViewModel.swift in Sources */,
@@ -618,6 +633,7 @@
 				C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */,
 				C7B540B126D13B470011192E /* SignIn.swift in Sources */,
 				C78944F526CD0FE000C04962 /* APIRepository.swift in Sources */,
+				C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */,
 				C7B540A926D13AAF0011192E /* AuthService.swift in Sources */,
 				C7B540EC26D27B460011192E /* View+Extension.swift in Sources */,
 				C7B540B926D142400011192E /* Loadable.swift in Sources */,
