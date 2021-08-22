@@ -12,7 +12,7 @@ protocol AuthService {
 }
 
 struct DefaultAuthService: AuthService {
-    let authRepository: AuthRepository = DefaultAuthRepository.shared
+    private let authRepository: AuthRepository = DefaultAuthRepository.shared
 
     func signIn(_ signedIn: LoadableSubject<Bool>) {
         signedIn.wrappedValue = .isLoading

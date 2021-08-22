@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignIn: View {
-    @ObservedObject private(set) var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel = .init()
 
     var body: some View {
         NavigationView {
@@ -30,6 +30,6 @@ struct SignIn: View {
 
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
-        SignIn(viewModel: .init())
+        SignIn()
     }
 }

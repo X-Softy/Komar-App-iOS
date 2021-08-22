@@ -8,8 +8,45 @@
 import SwiftUI
 
 struct CategoryList: View {
+    @ObservedObject private var viewModel: ViewModel = .init()
+    @State private var error: ErrorEntity? = nil
+
     var body: some View {
-        Text("Category List")
+        content
+            .navigationBarHidden(true)
+            .alert(error: $error)
+    }
+
+    private var content: AnyView {
+        switch viewModel.categories {
+        case .notRequested, .isLoading:
+            return AnyView(loadingView)
+        case .loaded(let categories):
+            return AnyView(list(categories: categories))
+        case .failed(let error):
+            self.error = error
+            return AnyView(errorView)
+        }
+    }
+
+    private func list(categories: [Category]) -> some View {
+        List {
+            ForEach(categories) {
+                Text($0.title)
+                    .onTapGesture {
+                        print("Tapped")
+                    }
+            }
+        }
+    }
+
+    private var loadingView: some View {
+        ActivityIndicatorView()
+            .onAppear(perform: viewModel.loadCategoryList)
+    }
+
+    private var errorView: some View {
+        EmptyView()
     }
 }
 

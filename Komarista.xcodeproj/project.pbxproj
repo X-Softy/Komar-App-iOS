@@ -20,6 +20,9 @@
 		C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728651F26D2CC1B00BB0645 /* MyRoomsViewModel.swift */; };
 		C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728652426D2CC2C00BB0645 /* MyRoomsService.swift */; };
 		C728652A26D2CC3A00BB0645 /* MyRoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728652926D2CC3A00BB0645 /* MyRoomsRepository.swift */; };
+		C728655A26D2D61300BB0645 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728655926D2D61300BB0645 /* Category.swift */; };
+		C728656226D2D90000BB0645 /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728656126D2D90000BB0645 /* Publisher+Extension.swift */; };
+		C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -83,6 +86,9 @@
 		C728651F26D2CC1B00BB0645 /* MyRoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsViewModel.swift; sourceTree = "<group>"; };
 		C728652426D2CC2C00BB0645 /* MyRoomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsService.swift; sourceTree = "<group>"; };
 		C728652926D2CC3A00BB0645 /* MyRoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsRepository.swift; sourceTree = "<group>"; };
+		C728655926D2D61300BB0645 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C728656126D2D90000BB0645 /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
+		C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 		C72864F826D2A34700BB0645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C728655926D2D61300BB0645 /* Category.swift */,
 				C72864F926D2A38A00BB0645 /* CategoryListService.swift */,
 				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
 			);
@@ -230,6 +237,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		C728657526D2EB0C00BB0645 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +256,7 @@
 		C78944C326CA97E800C04962 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C728657526D2EB0C00BB0645 /* Components */,
 				C75B1CF326CFA8C900C9C527 /* Domain */,
 				C78944E426CC421600C04962 /* API */,
 				C78944CF26CAA7A900C04962 /* Utils */,
@@ -276,6 +292,7 @@
 				C7B540EB26D27B460011192E /* View+Extension.swift */,
 				C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */,
 				C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */,
+				C728656126D2D90000BB0645 /* Publisher+Extension.swift */,
 				C7B5410126D282660011192E /* String+Extension.swift */,
 			);
 			path = Extensions;
@@ -665,6 +682,7 @@
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
 				C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */,
+				C728656226D2D90000BB0645 /* Publisher+Extension.swift in Sources */,
 				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
 				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
@@ -676,6 +694,7 @@
 				C728652A26D2CC3A00BB0645 /* MyRoomsRepository.swift in Sources */,
 				C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */,
 				C7B5409C26D139630011192E /* SignInViewModel.swift in Sources */,
+				C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */,
 				C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
@@ -686,6 +705,7 @@
 				C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */,
 				C7B540A926D13AAF0011192E /* AuthService.swift in Sources */,
 				C7B540EC26D27B460011192E /* View+Extension.swift in Sources */,
+				C728655A26D2D61300BB0645 /* Category.swift in Sources */,
 				C728651026D2A49000BB0645 /* Home.swift in Sources */,
 				C7B540B926D142400011192E /* Loadable.swift in Sources */,
 				C728651826D2CC0500BB0645 /* MyRooms.swift in Sources */,
