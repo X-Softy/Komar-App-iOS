@@ -25,7 +25,7 @@ extension APIRepository {
         request.setValue("Bearer \(userSession.authorization ?? "")", forHTTPHeaderField: "Authorization")
         return call(request: request)
             .mapError { error in
-                if case .invalidStatusCode(let code, let data) = error, code == 406 {
+                if case .invalidStatusCode(let code, let data) = error, [401, 406].contains(code) {
                     do { return try JSONDecoder().decode(ErrorEntity.self, from: data) } catch {}
                 }
                 return .init(message: error.localizedDescription)
