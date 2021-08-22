@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C72864EA26D2A28700BB0645 /* Presentation */,
-				C72864F826D2A34700BB0645 /* Domain */,
+				C72864F826D2A34700BB0645 /* Data */,
 			);
 			path = "Category List";
 			sourceTree = "<group>";
@@ -176,13 +176,13 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		C72864F826D2A34700BB0645 /* Domain */ = {
+		C72864F826D2A34700BB0645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				C72864F926D2A38A00BB0645 /* CategoryListService.swift */,
 				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
 			);
-			path = Domain;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
@@ -249,18 +249,18 @@
 			isa = PBXGroup;
 			children = (
 				C7B5408B26D138A10011192E /* Presentation */,
-				C789450126CD38F300C04962 /* Domain */,
+				C789450126CD38F300C04962 /* Data */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
 		};
-		C789450126CD38F300C04962 /* Domain */ = {
+		C789450126CD38F300C04962 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				C7B540A826D13AAF0011192E /* AuthService.swift */,
 				C789450426CD39BC00C04962 /* AuthRepository.swift */,
 			);
-			path = Domain;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C79297E126BF05F70022716D = {
