@@ -15,6 +15,10 @@ struct ErrorEntity: Decodable {
     }
 }
 
+extension ErrorEntity: Identifiable {
+    var id: String { message }
+}
+
 extension ErrorEntity: LocalizedError {
     var errorDescription: String? { message }
 }
