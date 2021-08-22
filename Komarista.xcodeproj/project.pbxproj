@@ -33,6 +33,7 @@
 		C7B540B926D142400011192E /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540B826D142400011192E /* Loadable.swift */; };
 		C7B540BE26D174320011192E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540BD26D174320011192E /* CancelBag.swift */; };
 		C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */; };
+		C7B540EC26D27B460011192E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540EB26D27B460011192E /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		C7B540B826D142400011192E /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		C7B540BD26D174320011192E /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+Extension.swift"; sourceTree = "<group>"; };
+		C7B540EB26D27B460011192E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista-KomaristaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 		C78944EB26CD0E2000C04962 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C7B540EB26D27B460011192E /* View+Extension.swift */,
 				C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */,
 				C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */,
 			);
@@ -632,6 +635,7 @@
 				C7B540B126D13B470011192E /* SignIn.swift in Sources */,
 				C78944F526CD0FE000C04962 /* APIRepository.swift in Sources */,
 				C7B540A926D13AAF0011192E /* AuthService.swift in Sources */,
+				C7B540EC26D27B460011192E /* View+Extension.swift in Sources */,
 				C7B540B926D142400011192E /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

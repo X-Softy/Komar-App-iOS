@@ -17,10 +17,7 @@ struct SignIn: View {
             Text(viewModel.label)
         }
         .disabled(viewModel.disabled)
-        .alert(item: $viewModel.error) {
-            .init(title: .init($0.message),
-                  dismissButton: .default(.init("OK")))
-        }
+        .alert(error: $viewModel.error)
     }
 }
 
