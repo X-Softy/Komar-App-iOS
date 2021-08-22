@@ -34,7 +34,6 @@
 		C789450A26CD3AD000C04962 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789450926CD3AD000C04962 /* UserSession.swift */; };
 		C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297ED26BF05F70022716D /* AppDelegate.swift */; };
 		C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297EF26BF05F70022716D /* SceneDelegate.swift */; };
-		C79297F226BF05F70022716D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79297F126BF05F70022716D /* ContentView.swift */; };
 		C79297F426BF05F80022716D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79297F326BF05F80022716D /* Assets.xcassets */; };
 		C79297F726BF05F80022716D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C79297F626BF05F80022716D /* Preview Assets.xcassets */; };
 		C79297FA26BF05F80022716D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79297F826BF05F80022716D /* LaunchScreen.storyboard */; };
@@ -101,7 +100,6 @@
 		C79297EA26BF05F70022716D /* Komarista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komarista.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79297ED26BF05F70022716D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79297EF26BF05F70022716D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C79297F126BF05F70022716D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C79297F326BF05F80022716D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C79297F626BF05F80022716D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C79297F926BF05F80022716D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 				C78944C326CA97E800C04962 /* Shared */,
 				C79297ED26BF05F70022716D /* AppDelegate.swift */,
 				C79297EF26BF05F70022716D /* SceneDelegate.swift */,
-				C79297F126BF05F70022716D /* ContentView.swift */,
 				C79297F326BF05F80022716D /* Assets.xcassets */,
 				C7B540FD26D27BA30011192E /* Localizable.strings */,
 				C79297F826BF05F80022716D /* LaunchScreen.storyboard */,
@@ -687,7 +684,6 @@
 				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
-				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
 				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
 				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
 				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
