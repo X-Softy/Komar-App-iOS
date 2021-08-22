@@ -15,6 +15,11 @@
 		C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */; };
 		C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F926D2A38A00BB0645 /* CategoryListService.swift */; };
 		C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */; };
+		C728651026D2A49000BB0645 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728650F26D2A49000BB0645 /* Home.swift */; };
+		C728651826D2CC0500BB0645 /* MyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728651726D2CC0500BB0645 /* MyRooms.swift */; };
+		C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728651F26D2CC1B00BB0645 /* MyRoomsViewModel.swift */; };
+		C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728652426D2CC2C00BB0645 /* MyRoomsService.swift */; };
+		C728652A26D2CC3A00BB0645 /* MyRoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728652926D2CC3A00BB0645 /* MyRoomsRepository.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -73,6 +78,11 @@
 		C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		C72864F926D2A38A00BB0645 /* CategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListService.swift; sourceTree = "<group>"; };
 		C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRepository.swift; sourceTree = "<group>"; };
+		C728650F26D2A49000BB0645 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C728651726D2CC0500BB0645 /* MyRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRooms.swift; sourceTree = "<group>"; };
+		C728651F26D2CC1B00BB0645 /* MyRoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsViewModel.swift; sourceTree = "<group>"; };
+		C728652426D2CC2C00BB0645 /* MyRoomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsService.swift; sourceTree = "<group>"; };
+		C728652926D2CC3A00BB0645 /* MyRoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsRepository.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -185,6 +195,41 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		C728650626D2A45200BB0645 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C728650F26D2A49000BB0645 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C728651426D2A71F00BB0645 /* My Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				C728651626D2A73400BB0645 /* Presentation */,
+				C728651526D2A72F00BB0645 /* Data */,
+			);
+			path = "My Rooms";
+			sourceTree = "<group>";
+		};
+		C728651526D2A72F00BB0645 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C728652426D2CC2C00BB0645 /* MyRoomsService.swift */,
+				C728652926D2CC3A00BB0645 /* MyRoomsRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C728651626D2A73400BB0645 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C728651726D2CC0500BB0645 /* MyRooms.swift */,
+				C728651F26D2CC1B00BB0645 /* MyRoomsViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				C789450026CD38E600C04962 /* Sign In */,
+				C728650626D2A45200BB0645 /* Home */,
 				C72864E926D2A26F00BB0645 /* Category List */,
+				C728651426D2A71F00BB0645 /* My Rooms */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -619,14 +666,17 @@
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
 				C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */,
 				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
+				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
 				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
 				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
 				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
+				C728652A26D2CC3A00BB0645 /* MyRoomsRepository.swift in Sources */,
 				C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */,
 				C7B5409C26D139630011192E /* SignInViewModel.swift in Sources */,
+				C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
 				C7B540BE26D174320011192E /* CancelBag.swift in Sources */,
@@ -636,7 +686,9 @@
 				C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */,
 				C7B540A926D13AAF0011192E /* AuthService.swift in Sources */,
 				C7B540EC26D27B460011192E /* View+Extension.swift in Sources */,
+				C728651026D2A49000BB0645 /* Home.swift in Sources */,
 				C7B540B926D142400011192E /* Loadable.swift in Sources */,
+				C728651826D2CC0500BB0645 /* MyRooms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

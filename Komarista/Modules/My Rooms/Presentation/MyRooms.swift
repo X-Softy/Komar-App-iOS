@@ -1,5 +1,5 @@
 //
-//  CategoryList.swift
+//  MyRooms.swift
 //  Komarista
 //
 //  Created by Giorgi Kratsashvili on 8/22/21.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CategoryList: View {
+struct MyRooms: View {
     var body: some View {
-        Text("Category List")
+        Text("My Rooms")
     }
 }
 
-struct CategoryList_Previews: PreviewProvider {
+struct MyRooms_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryList()
+        MyRooms()
     }
 }

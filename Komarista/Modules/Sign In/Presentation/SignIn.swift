@@ -11,13 +11,20 @@ struct SignIn: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Button {
-            viewModel.signIn()
-        } label: {
-            Text(viewModel.label)
+        NavigationView {
+            VStack {
+                NavigationLink(destination: Home(), isActive: $viewModel.navigate2Home) {
+                    EmptyView()
+                }
+                Button {
+                    viewModel.signIn()
+                } label: {
+                    Text(viewModel.label)
+                }
+                .disabled(viewModel.disabled)
+                .alert(error: $viewModel.error)
+            }
         }
-        .disabled(viewModel.disabled)
-        .alert(error: $viewModel.error)
     }
 }
 

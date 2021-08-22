@@ -25,3 +25,7 @@
 "auth.sign.in.button.signed.in" = "Signed in";
 "auth.sign.in.button.loading" = "Loading";
 "auth.sign.in.button.try.again" = "Try again";
+
+/* Home */
+"home.tab.title.category.list" = "Categories";
+"home.tab.title.my.rooms" = "My Rooms";

@@ -14,6 +14,7 @@ extension SignIn {
         @Published var disabled: Bool
         @Published var label: LocalizedStringKey
         @Published var error: ErrorEntity?
+        @Published var navigate2Home: Bool = false
         // View model state
         @Published private var signedIn: Loadable<Bool>
 
@@ -41,7 +42,7 @@ extension SignIn {
         private func handle(signedIn: Loadable<Bool>) {
             refreshViewState(from: signedIn)
             if case .loaded(let signedIn) = signedIn, signedIn {
-                // navigate to categories page
+                navigate2Home = true
             }
         }
 
