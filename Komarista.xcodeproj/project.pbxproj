@@ -193,7 +193,6 @@
 		C72864F826D2A34700BB0645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C728655926D2D61300BB0645 /* Category.swift */,
 				C72864F926D2A38A00BB0645 /* CategoryListService.swift */,
 				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
 			);
@@ -246,6 +245,7 @@
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C728655926D2D61300BB0645 /* Category.swift */,
 				C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */,
 			);
 			path = Domain;
