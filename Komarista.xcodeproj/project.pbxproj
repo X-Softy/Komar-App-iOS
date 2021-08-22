@@ -153,17 +153,9 @@
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C75B1CF726CFB0B300C9C527 /* Entities */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		C75B1CF726CFB0B300C9C527 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
 				C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */,
 			);
-			path = Entities;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C78944C326CA97E800C04962 /* Shared */ = {
@@ -177,19 +169,11 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		C78944C426CA984E00C04962 /* Web */ = {
+		C78944CF26CAA7A900C04962 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				C78944C526CA9D9000C04962 /* WebRepository.swift */,
 				C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */,
-			);
-			path = Web;
-			sourceTree = "<group>";
-		};
-		C78944CF26CAA7A900C04962 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				C78944C426CA984E00C04962 /* Web */,
 				C7B540B826D142400011192E /* Loadable.swift */,
 				C7B540BD26D174320011192E /* CancelBag.swift */,
 			);
@@ -246,17 +230,9 @@
 		C789450226CD398700C04962 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C789450326CD39A600C04962 /* Auth */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		C789450326CD39A600C04962 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
 				C789450426CD39BC00C04962 /* AuthRepository.swift */,
 			);
-			path = Auth;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		C79297E126BF05F70022716D = {
