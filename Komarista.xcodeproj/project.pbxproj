@@ -34,6 +34,8 @@
 		C7B540BE26D174320011192E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540BD26D174320011192E /* CancelBag.swift */; };
 		C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */; };
 		C7B540EC26D27B460011192E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540EB26D27B460011192E /* View+Extension.swift */; };
+		C7B540FB26D27BA30011192E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7B540FD26D27BA30011192E /* Localizable.strings */; };
+		C7B5410226D282660011192E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B5410126D282660011192E /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		C7B540BD26D174320011192E /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+Extension.swift"; sourceTree = "<group>"; };
 		C7B540EB26D27B460011192E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		C7B540FC26D27BA30011192E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C7B5410126D282660011192E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista-KomaristaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +212,7 @@
 				C7B540EB26D27B460011192E /* View+Extension.swift */,
 				C78944EC26CD0E3F00C04962 /* Bundle+Extension.swift */,
 				C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */,
+				C7B5410126D282660011192E /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				C79297EF26BF05F70022716D /* SceneDelegate.swift */,
 				C79297F126BF05F70022716D /* ContentView.swift */,
 				C79297F326BF05F80022716D /* Assets.xcassets */,
+				C7B540FD26D27BA30011192E /* Localizable.strings */,
 				C79297F826BF05F80022716D /* LaunchScreen.storyboard */,
 				C79297FB26BF05F80022716D /* Info.plist */,
 				C7276EA726BF0884007D2512 /* GoogleService-Info.plist */,
@@ -454,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B540FB26D27BA30011192E /* Localizable.strings in Resources */,
 				C79297FA26BF05F80022716D /* LaunchScreen.storyboard in Resources */,
 				C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */,
 				C79297F726BF05F80022716D /* Preview Assets.xcassets in Resources */,
@@ -622,6 +629,7 @@
 				C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */,
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
+				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C79297F226BF05F70022716D /* ContentView.swift in Sources */,
@@ -678,6 +686,14 @@
 				C79297F926BF05F80022716D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C7B540FD26D27BA30011192E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7B540FC26D27BA30011192E /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

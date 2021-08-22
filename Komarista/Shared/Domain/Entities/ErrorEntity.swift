@@ -8,9 +8,9 @@
 import Foundation
 
 struct ErrorEntity: Decodable {
-    let message: String
+    let message: String // already localized
 
-    init(message: String = "Something went wrong") {
+    init(message: String = "error.default.message".localized) {
         self.message = message
     }
 }

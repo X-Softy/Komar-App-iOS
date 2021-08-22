@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Komarista
+
+  Created by Giorgi Kratsashvili on 8/22/21.
+*/
+
+/** Shared */
+
+/* Error */
+"error.default.message" = "Something went wrong";
+"error.alert.dismiss.title" = "Dismiss";
+
+/* Utils.Web */
+"utils.web.invalid.response" = "Invalid response";
+"utils.web.invalid.status.code" = "Invalid status code";
+"utils.web.decoding.error" = "Decoding error";
+"utils.web.url.error" = "URL Error";
+"utils.web.error" = "Error";
+
+/** Pages */
+
+/* Auth.SignIn */
+"auth.sign.in.button.sign.in" = "Sign in";
+"auth.sign.in.button.signed.in" = "Signed in";
+"auth.sign.in.button.loading" = "Loading";
+"auth.sign.in.button.try.again" = "Try again";

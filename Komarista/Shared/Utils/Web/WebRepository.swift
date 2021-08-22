@@ -55,11 +55,11 @@ enum WebErrorType {
 extension WebErrorType: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .invalidResponse:                return "Invalid response"
-        case .invalidStatusCode(let code, _): return "Invalid status code: \(code)"
-        case .decodingError:                  return "Decoding error"
-        case .urlError(let error):            return "URL Error: \(error.localizedDescription)"
-        case .error(let error):               return "Error: \(error.localizedDescription)"
+        case .invalidResponse:                return "utils.web.invalid.response".localized
+        case .invalidStatusCode(let code, _): return "\("utils.web.invalid.status.code".localized): \(code)"
+        case .decodingError:                  return "utils.web.decoding.error".localized
+        case .urlError(let error):            return "\("utils.web.url.error".localized): \(error.localizedDescription)"
+        case .error(let error):               return "\("utils.web.error".localized): \(error.localizedDescription)"
         }
     }
 }

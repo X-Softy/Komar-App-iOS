@@ -6,12 +6,13 @@
 //
 
 import Combine
+import SwiftUI
 
 extension SignIn {
     class ViewModel: ObservableObject {
         // View state
         @Published var disabled: Bool
-        @Published var label: String
+        @Published var label: LocalizedStringKey
         @Published var error: ErrorEntity?
         // View model state
         @Published private var signedIn: Loadable<Bool>
@@ -54,12 +55,13 @@ extension SignIn {
 }
 
 fileprivate extension Loadable {
-    func toViewState() -> (Bool, String, ErrorEntity?) where T == Bool {
+    func toViewState() -> (Bool, LocalizedStringKey, ErrorEntity?) where T == Bool {
+        let prefix = "auth.sign.in.button."
         switch self {
-        case .notRequested:         return (false, "Sign In", nil)
-        case .isLoading:            return (true, "Loading", nil)
-        case .loaded(let signedIn): return (signedIn, signedIn ? "Signed In" : "Sign In", nil)
-        case .failed(let error):    return (false, "Try Again", error)
+        case .notRequested:         return (false,    "\(prefix)sign.in".asKey, nil)
+        case .isLoading:            return (true,     "\(prefix)loading".asKey, nil)
+        case .loaded(let signedIn): return (signedIn, "\(prefix)\(signedIn ? "signed.in" : "sign.in")".asKey, nil)
+        case .failed(let error):    return (false,    "\(prefix)try.again".asKey, error)
         }
     }
 }
