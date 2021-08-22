@@ -11,25 +11,15 @@ struct SignIn: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        let (disabled, label) = state()
         Button {
             viewModel.signIn()
         } label: {
-            Text(label)
+            Text(viewModel.label)
         }
-        .disabled(disabled)
+        .disabled(viewModel.disabled)
         .alert(item: $viewModel.error) {
-            Alert(title: Text($0.message),
-                  dismissButton: .default(Text("OK")))
-        }
-    }
-
-    private func state() -> (Bool, String) {
-        switch viewModel.signedIn {
-        case .notRequested:         return (false, "Sign In")
-        case .isLoading:            return (true, "Loading")
-        case .loaded(let signedIn): return (signedIn, signedIn ? "Signed In" : "Sign In")
-        case .failed:               return (false, "Try Again")
+            .init(title: .init($0.message),
+                  dismissButton: .default(.init("OK")))
         }
     }
 }
