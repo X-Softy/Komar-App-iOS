@@ -12,9 +12,12 @@ struct MyRooms: View {
     @State private var error: ErrorEntity? = nil
 
     var body: some View {
-        VStack { content }
-            .navigationBarHidden(true)
-            .alert(error: $error)
+        VStack {
+            NavigationLink(destination: CreateRoom()) { Text("Create Room") }
+            content
+        }
+        .navigationBarHidden(true)
+        .alert(error: $error)
     }
 
     private var content: AnyView {
