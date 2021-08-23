@@ -23,6 +23,10 @@
 		C728655A26D2D61300BB0645 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728655926D2D61300BB0645 /* Category.swift */; };
 		C728656226D2D90000BB0645 /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728656126D2D90000BB0645 /* Publisher+Extension.swift */; };
 		C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */; };
+		C728658E26D3AFA200BB0645 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728658D26D3AFA200BB0645 /* RoomsViewModel.swift */; };
+		C728659326D3AFDD00BB0645 /* RoomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728659226D3AFDD00BB0645 /* RoomsService.swift */; };
+		C728659826D3AFEA00BB0645 /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728659726D3AFEA00BB0645 /* RoomsRepository.swift */; };
+		C72865A026D3AFFB00BB0645 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728659F26D3AFFB00BB0645 /* Rooms.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -88,6 +92,10 @@
 		C728655926D2D61300BB0645 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C728656126D2D90000BB0645 /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 		C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		C728658D26D3AFA200BB0645 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
+		C728659226D3AFDD00BB0645 /* RoomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsService.swift; sourceTree = "<group>"; };
+		C728659726D3AFEA00BB0645 /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
+		C728659F26D3AFFB00BB0645 /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -242,6 +250,33 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C728658226D3AF7200BB0645 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				C728658426D3AF8700BB0645 /* Presentaion */,
+				C728658326D3AF8200BB0645 /* Data */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		C728658326D3AF8200BB0645 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C728659226D3AFDD00BB0645 /* RoomsService.swift */,
+				C728659726D3AFEA00BB0645 /* RoomsRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C728658426D3AF8700BB0645 /* Presentaion */ = {
+			isa = PBXGroup;
+			children = (
+				C728659F26D3AFFB00BB0645 /* Rooms.swift */,
+				C728658D26D3AFA200BB0645 /* RoomsViewModel.swift */,
+			);
+			path = Presentaion;
+			sourceTree = "<group>";
+		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +338,7 @@
 				C728650626D2A45200BB0645 /* Home */,
 				C72864E926D2A26F00BB0645 /* Category List */,
 				C728651426D2A71F00BB0645 /* My Rooms */,
+				C728658226D3AF7200BB0645 /* Rooms */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -686,16 +722,20 @@
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
 				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
+				C728658E26D3AFA200BB0645 /* RoomsViewModel.swift in Sources */,
 				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
 				C728652A26D2CC3A00BB0645 /* MyRoomsRepository.swift in Sources */,
 				C7B540C326D180AB0011192E /* ObservableObject+Extension.swift in Sources */,
+				C728659826D3AFEA00BB0645 /* RoomsRepository.swift in Sources */,
 				C7B5409C26D139630011192E /* SignInViewModel.swift in Sources */,
+				C728659326D3AFDD00BB0645 /* RoomsService.swift in Sources */,
 				C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */,
 				C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
 				C7B540BE26D174320011192E /* CancelBag.swift in Sources */,
 				C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */,
+				C72865A026D3AFFB00BB0645 /* Rooms.swift in Sources */,
 				C7B540B126D13B470011192E /* SignIn.swift in Sources */,
 				C78944F526CD0FE000C04962 /* APIRepository.swift in Sources */,
 				C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */,

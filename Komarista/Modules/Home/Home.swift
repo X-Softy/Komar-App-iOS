@@ -21,7 +21,6 @@ struct Home: View {
                     Text("home.tab.title.my.rooms")
                 }
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
 }

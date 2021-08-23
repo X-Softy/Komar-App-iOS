@@ -31,11 +31,10 @@ struct CategoryList: View {
 
     private func list(categories: [Category]) -> some View {
         List {
-            ForEach(categories) {
-                Text($0.title)
-                    .onTapGesture {
-                        print("Tapped")
-                    }
+            ForEach(categories) { category in
+                NavigationLink(destination: Rooms(viewModel: .init(with: .init(category: category)))) {
+                    Text(category.title)
+                }
             }
         }
     }
