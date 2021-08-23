@@ -10,12 +10,14 @@ import SwiftUI
 struct Home: View {
     var body: some View {
         TabView {
-            CategoryList()
+            NavigationView { CategoryList() }
+                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
                     Image("pages/home/category.list")
                     Text("home.tab.title.category.list")
                 }
-            MyRooms()
+            NavigationView { MyRooms() }
+                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
                     Image("pages/home/my.rooms")
                     Text("home.tab.title.my.rooms")

@@ -5,18 +5,17 @@
 //  Created by Giorgi Kratsashvili on 8/18/21.
 //
 
-import Foundation
+import Combine
 
-class UserSession {
-    private(set) var authorization: String? = nil
-    private(set) var userId: String? = nil
+class UserSession: ObservableObject {
+    struct State {
+        let authorization: String
+        let userId: String
+    }
+
+    @Published var state: State? = nil
 
     static var shared: UserSession = .init()
 
     private init() {}
-
-    func set(authorization: String?, userId: String?) {
-        self.authorization = authorization
-        self.userId = userId
-    }
 }

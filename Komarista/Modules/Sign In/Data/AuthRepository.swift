@@ -32,7 +32,7 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
     }
 
     func signOut() {
-        userSession.set(authorization: nil, userId: nil)
+        userSession.state = nil
         gidSignIn?.signOut()
     }
 
@@ -42,7 +42,8 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
         }
 
         guard let authentication = user?.authentication,
-              let idToken = authentication.idToken
+              let idToken = authentication.idToken,
+              let userId = user?.profile?.email
         else {
             return failure(.init())
         }
@@ -59,12 +60,13 @@ class DefaultAuthRepository: NSObject, GIDSignInDelegate, AuthRepository {
 
             Auth.auth().currentUser?.getIDToken(completion: { [weak self] result, error in
                 guard let self = self else { return }
+                guard let authorization = result else { return self.failure(.init()) }
 
                 if let error = error {
                     return self.failure(.init(from: error))
                 }
 
-                self.userSession.set(authorization: result, userId: user?.profile?.email)
+                self.userSession.state = .init(authorization: authorization, userId: userId)
 
                 return self.success()
             })

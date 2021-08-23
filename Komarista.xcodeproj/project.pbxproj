@@ -34,6 +34,7 @@
 		C72865C826D3E2A200BB0645 /* CreateRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865C726D3E2A200BB0645 /* CreateRoomViewModel.swift */; };
 		C72865CD26D3E2F100BB0645 /* CreateRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865CC26D3E2F100BB0645 /* CreateRoomService.swift */; };
 		C72865D226D3E30500BB0645 /* CreateRoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865D126D3E30500BB0645 /* CreateRoomRepository.swift */; };
+		C72865DB26D412A700BB0645 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865DA26D412A700BB0645 /* Root.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -110,6 +111,7 @@
 		C72865C726D3E2A200BB0645 /* CreateRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewModel.swift; sourceTree = "<group>"; };
 		C72865CC26D3E2F100BB0645 /* CreateRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomService.swift; sourceTree = "<group>"; };
 		C72865D126D3E30500BB0645 /* CreateRoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomRepository.swift; sourceTree = "<group>"; };
+		C72865DA26D412A700BB0645 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -343,6 +345,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		C72865D626D40BA700BB0645 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				C72865DA26D412A700BB0645 /* Root.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		C78944FF26CD38B600C04962 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C72865D626D40BA700BB0645 /* Root */,
 				C789450026CD38E600C04962 /* Sign In */,
 				C728650626D2A45200BB0645 /* Home */,
 				C72864E926D2A26F00BB0645 /* Category List */,
@@ -803,6 +814,7 @@
 				C728659826D3AFEA00BB0645 /* RoomsRepository.swift in Sources */,
 				C7B5409C26D139630011192E /* SignInViewModel.swift in Sources */,
 				C728659326D3AFDD00BB0645 /* RoomsService.swift in Sources */,
+				C72865DB26D412A700BB0645 /* Root.swift in Sources */,
 				C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */,
 				C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,

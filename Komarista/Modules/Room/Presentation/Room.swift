@@ -11,7 +11,8 @@ struct Room: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Text("Room: \(viewModel.params.room.title)")
+        Group { Text("Room: \(viewModel.params.room.title)") }
+            .navigationBarTitle("Room", displayMode: .automatic)
     }
 }
 

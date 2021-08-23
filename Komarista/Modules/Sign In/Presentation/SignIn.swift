@@ -11,21 +11,13 @@ struct SignIn: View {
     @ObservedObject private var viewModel: ViewModel = .init()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: Home(), isActive: $viewModel.navigate2Home) {
-                    EmptyView()
-                }
-                Button {
-                    viewModel.signIn()
-                } label: {
-                    Text(viewModel.label)
-                }
-                .disabled(viewModel.disabled)
-                .alert(error: $viewModel.error)
-            }
+        Button {
+            viewModel.signIn()
+        } label: {
+            Text(viewModel.label)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .disabled(viewModel.disabled)
+        .alert(error: $viewModel.error)
     }
 }
 

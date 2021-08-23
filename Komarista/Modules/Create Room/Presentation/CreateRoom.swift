@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CreateRoom: View {
     var body: some View {
-        Text("Create Room")
+        Group { Text("Create Room") }
+            .navigationBarTitle("Create Room", displayMode: .automatic)
     }
 }
 

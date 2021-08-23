@@ -12,12 +12,9 @@ struct MyRooms: View {
     @State private var error: ErrorEntity? = nil
 
     var body: some View {
-        VStack {
-            NavigationLink(destination: CreateRoom()) { Text("Create Room") }
-            content
-        }
-        .navigationBarHidden(true)
-        .alert(error: $error)
+        Group { content }
+            .alert(error: $error)
+            .navigationBarTitle("My Rooms", displayMode: .automatic)
     }
 
     private var content: AnyView {
@@ -33,10 +30,13 @@ struct MyRooms: View {
     }
 
     private func list(rooms: [RoomBrief]) -> some View {
-        List {
-            ForEach(rooms) { room in
-                NavigationLink(destination: Room(viewModel: .init(with: .init(room: room)))) {
-                    Text(room.title)
+        VStack {
+            NavigationLink(destination: CreateRoom()) { Text("Create Room") }
+            List {
+                ForEach(rooms) { room in
+                    NavigationLink(destination: Room(viewModel: .init(with: .init(room: room)))) {
+                        Text(room.title)
+                    }
                 }
             }
         }

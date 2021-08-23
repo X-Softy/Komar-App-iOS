@@ -12,9 +12,9 @@ struct CategoryList: View {
     @State private var error: ErrorEntity? = nil
 
     var body: some View {
-        VStack { content }
-            .navigationBarHidden(true)
+        Group { content }
             .alert(error: $error)
+            .navigationBarTitle("Categories", displayMode: .automatic)
     }
 
     private var content: AnyView {

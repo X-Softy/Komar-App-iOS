@@ -12,9 +12,9 @@ struct Rooms: View {
     @State private var error: ErrorEntity? = nil
 
     var body: some View {
-        VStack { content }
+        Group { content }
             .alert(error: $error)
-            .navigationBarTitle("Rooms", displayMode: .inline)
+            .navigationBarTitle("Rooms", displayMode: .automatic)
     }
 
     private var content: AnyView {

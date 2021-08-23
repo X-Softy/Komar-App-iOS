@@ -22,7 +22,7 @@ extension APIRepository {
     func call<Response: Decodable>(with requestBuilder: UrlRequestBuilderHTTPRequestBuilder) -> AnyPublisher<Response, ErrorEntity> {
         var request = requestBuilder
             .build()
-        request.setValue("Bearer \(userSession.authorization ?? "")", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(userSession.state?.authorization ?? "")", forHTTPHeaderField: "Authorization")
         return call(request: request)
             .mapError { error in
                 if case .invalidStatusCode(let code, let data) = error, [401, 406].contains(code) {
