@@ -32,7 +32,7 @@ struct CategoryList: View {
     private func list(categories: [Category]) -> some View {
         List {
             ForEach(categories) { category in
-                NavigationLink(destination: Rooms(viewModel: .init(with: .init(category: category)))) {
+                NavigationLink(destination: Rooms(viewModel: .init(of: category))) {
                     Text(category.title)
                 }
             }

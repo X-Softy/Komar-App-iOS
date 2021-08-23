@@ -10,14 +10,16 @@ import SwiftUI
 
 extension Rooms {
     class ViewModel: ObservableObject {
-        struct Params {
-            let category: Category
+        @Published var rooms: Loadable<[RoomBrief]> = .notRequested
+        let category: Category
+        private var roomsService: RoomsService = DefaultRoomsService()
+
+        init(of category: Category) {
+            self.category = category
         }
 
-        let params: Params
-
-        init(with params: Params) {
-            self.params = params
+        func loadRooms() {
+            roomsService.rooms(categoryId: category.id, loadableSubject(\.rooms))
         }
     }
 }
