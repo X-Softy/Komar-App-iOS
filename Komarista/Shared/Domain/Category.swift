@@ -8,7 +8,6 @@
 import Foundation
 
 struct Category: Decodable, Identifiable {
-    typealias ID = String
-    let id: ID
+    let id: String
     let title: String
 }
