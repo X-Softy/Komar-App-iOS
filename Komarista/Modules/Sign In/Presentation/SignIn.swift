@@ -25,6 +25,7 @@ struct SignIn: View {
                 .alert(error: $viewModel.error)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

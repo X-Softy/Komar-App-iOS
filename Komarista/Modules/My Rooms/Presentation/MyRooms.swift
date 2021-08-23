@@ -10,6 +10,7 @@ import SwiftUI
 struct MyRooms: View {
     var body: some View {
         Text("My Rooms")
+            .navigationBarHidden(true)
     }
 }
 
