@@ -13,12 +13,8 @@ struct Room: View {
 
     var body: some View {
         Group {
-            Button {
-                viewModel.action()
-            } label: {
-                Text(viewModel.button.rawValue)
-            }
-            .disabled(viewModel.button == .inactive)
+            Button(action: viewModel.action) { Text(viewModel.button.rawValue) }
+                .disabled(viewModel.button == .inactive)
         }
         .navigationBarTitle("room.bar.title")
         .onDisappear(perform: viewModel.params.onDisappear)
