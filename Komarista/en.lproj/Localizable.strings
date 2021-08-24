@@ -20,7 +20,7 @@
 
 /** Pages */
 
-/* Auth.SignIn */
+/* Sign In */
 "auth.sign.in.button.sign.in" = "Sign in";
 "auth.sign.in.button.signed.in" = "Signed in";
 "auth.sign.in.button.loading" = "Loading";
@@ -29,3 +29,23 @@
 /* Home */
 "home.tab.title.category.list" = "Categories";
 "home.tab.title.my.rooms" = "My Rooms";
+
+/* Category List */
+"category.list.bar.title" = "Categories";
+
+/* My Rooms */
+"my.rooms.bar.title" = "My Rooms";
+
+/* Rooms */
+"rooms.bar.title" = "Rooms";
+
+/* Room */
+"room.bar.title" = "Details";
+
+/* Create Room */
+"create.room.bar.title" = "Create Room";
+"create.room.picker.title" = "Choose Category";
+"create.room.picker.initial" = "Choose Category";
+"create.room.title.placeholder" = "Title";
+"create.room.description.placeholder" = "Description";
+"create.room.button.title" = "Create";

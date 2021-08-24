@@ -13,8 +13,8 @@ struct Rooms: View {
 
     var body: some View {
         Group { content }
+            .navigationBarTitle("rooms.bar.title")
             .alert(error: $error)
-            .navigationBarTitle("Rooms", displayMode: .automatic)
     }
 
     private var content: AnyView {

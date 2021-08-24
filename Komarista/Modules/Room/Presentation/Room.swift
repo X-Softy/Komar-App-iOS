@@ -12,7 +12,7 @@ struct Room: View {
 
     var body: some View {
         Group { Text("Room: \(viewModel.params.room.title)") }
-            .navigationBarTitle("Room", displayMode: .automatic)
+            .navigationBarTitle("room.bar.title")
     }
 }
 

@@ -13,8 +13,8 @@ struct CategoryList: View {
 
     var body: some View {
         Group { content }
+            .navigationBarTitle("category.list.bar.title")
             .alert(error: $error)
-            .navigationBarTitle("Categories", displayMode: .automatic)
     }
 
     private var content: AnyView {

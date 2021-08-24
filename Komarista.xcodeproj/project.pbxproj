@@ -35,6 +35,7 @@
 		C72865CD26D3E2F100BB0645 /* CreateRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865CC26D3E2F100BB0645 /* CreateRoomService.swift */; };
 		C72865D226D3E30500BB0645 /* CreateRoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865D126D3E30500BB0645 /* CreateRoomRepository.swift */; };
 		C72865DB26D412A700BB0645 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865DA26D412A700BB0645 /* Root.swift */; };
+		C72865F526D462D200BB0645 /* CreateRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865F426D462D200BB0645 /* CreateRoomDTO.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -112,6 +113,7 @@
 		C72865CC26D3E2F100BB0645 /* CreateRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomService.swift; sourceTree = "<group>"; };
 		C72865D126D3E30500BB0645 /* CreateRoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomRepository.swift; sourceTree = "<group>"; };
 		C72865DA26D412A700BB0645 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		C72865F426D462D200BB0645 /* CreateRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomDTO.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		C72865C026D3E26200BB0645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C72865F426D462D200BB0645 /* CreateRoomDTO.swift */,
 				C72865CC26D3E2F100BB0645 /* CreateRoomService.swift */,
 				C72865D126D3E30500BB0645 /* CreateRoomRepository.swift */,
 			);
@@ -832,6 +835,7 @@
 				C728655A26D2D61300BB0645 /* Category.swift in Sources */,
 				C728651026D2A49000BB0645 /* Home.swift in Sources */,
 				C7B540B926D142400011192E /* Loadable.swift in Sources */,
+				C72865F526D462D200BB0645 /* CreateRoomDTO.swift in Sources */,
 				C728651826D2CC0500BB0645 /* MyRooms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
