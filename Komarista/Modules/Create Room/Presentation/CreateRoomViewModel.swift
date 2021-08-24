@@ -28,16 +28,9 @@ extension CreateRoom {
                 }
                 .store(in: &cancelBag)
 
-            $created.sink { [weak self] in
-                guard let self = self else { return }
-                switch $0 {
-                case .notRequested: break // initial value
-                case .isLoading: break    // TODO: change button to loading state
-                case .loaded: self.error = .init(message: "Created")
-                case .failed(let error): self.error = error
-                }
-            }
-            .store(in: &cancelBag)
+            $created
+                .sink { [weak self] in self?.handle(created: $0) }
+                .store(in: &cancelBag)
         }
 
         func loadCategoryList() {
@@ -53,6 +46,21 @@ extension CreateRoom {
                 ),
                 loadableSubject(\.created)
             )
+        }
+
+        private func handle(created: Loadable<Void>) {
+            switch created {
+            case .notRequested:
+                break // initial value
+            case .isLoading:
+                disabled = true
+            case .loaded:
+                error = .init(message: "create.room.created".localized)
+                disabled = false
+            case .failed(let error):
+                self.error = error
+                disabled = false
+            }
         }
     }
 }

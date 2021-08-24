@@ -32,7 +32,7 @@ struct CreateRoom: View {
         Form {
             Section {
                 Picker("create.room.picker.title", selection: $viewModel.selectedCategory) {
-                    Text("create.room.picker.initial")
+                    Text("create.room.category.placeholder")
                     ForEach(categories) {
                         Text($0.title)
                     }
