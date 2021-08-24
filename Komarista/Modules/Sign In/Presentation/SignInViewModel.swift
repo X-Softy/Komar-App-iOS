@@ -36,7 +36,7 @@ extension SignIn {
         }
 
         func signIn() {
-            authService.signIn(loadableSubject(\.signedIn))
+            authService.signIn(subject(\.signedIn))
         }
 
         private func handle(signedIn: Loadable<Bool>) {

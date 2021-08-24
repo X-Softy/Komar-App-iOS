@@ -13,6 +13,7 @@ struct Room: View {
     var body: some View {
         Group { Text("Room: \(viewModel.params.room.title)") }
             .navigationBarTitle("room.bar.title")
+            .onDisappear(perform: viewModel.params.onDisappear)
     }
 }
 

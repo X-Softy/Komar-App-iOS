@@ -15,7 +15,7 @@ extension MyRooms {
         private var roomsService: MyRoomsService = DefaultMyRoomsService()
 
         func loadRooms() {
-            roomsService.rooms(loadableSubject(\.rooms))
+            roomsService.rooms(subject(\.rooms))
         }
     }
 }

@@ -12,6 +12,7 @@ struct MyRooms: View {
 
     var body: some View {
         Group { content }
+            .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("my.rooms.bar.title")
             .alert(error: $viewModel.error)
     }
@@ -30,10 +31,10 @@ struct MyRooms: View {
 
     private func list(rooms: [RoomBrief]) -> some View {
         VStack {
-            NavigationLink(destination: CreateRoom()) { Text("Create Room") }
+            NavigationLink(destination: CreateRoom(viewModel: .init(with: .init(onDisappear: viewModel.loadRooms)))) { Text("Create Room") }
             List {
                 ForEach(rooms) { room in
-                    NavigationLink(destination: Room(viewModel: .init(with: .init(room: room)))) {
+                    NavigationLink(destination: Room(viewModel: .init(with: .init(room: room, onDisappear: viewModel.loadRooms)))) {
                         Text(room.title)
                     }
                 }

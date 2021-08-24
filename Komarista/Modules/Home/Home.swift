@@ -11,13 +11,11 @@ struct Home: View {
     var body: some View {
         TabView {
             NavigationView { CategoryList() }
-                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
                     Image("pages/home/category.list")
                     Text("home.tab.title.category.list")
                 }
             NavigationView { MyRooms() }
-                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
                     Image("pages/home/my.rooms")
                     Text("home.tab.title.my.rooms")

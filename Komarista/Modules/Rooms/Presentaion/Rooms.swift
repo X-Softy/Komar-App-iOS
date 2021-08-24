@@ -31,7 +31,7 @@ struct Rooms: View {
     private func list(rooms: [RoomBrief]) -> some View {
         List {
             ForEach(rooms) { room in
-                NavigationLink(destination: Room(viewModel: .init(with: .init(room: room)))) {
+                NavigationLink(destination: Room(viewModel: .init(with: .init(room: room, onDisappear: viewModel.loadRooms)))) {
                     Text(room.title)
                 }
             }

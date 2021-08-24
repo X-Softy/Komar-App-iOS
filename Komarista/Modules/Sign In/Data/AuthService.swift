@@ -8,13 +8,13 @@
 import SwiftUI
 
 protocol AuthService {
-    func signIn(_ signedIn: LoadableSubject<Bool>)
+    func signIn(_ signedIn: Binding<Loadable<Bool>>)
 }
 
 struct DefaultAuthService: AuthService {
     private let authRepository: AuthRepository = DefaultAuthRepository.shared
 
-    func signIn(_ signedIn: LoadableSubject<Bool>) {
+    func signIn(_ signedIn: Binding<Loadable<Bool>>) {
         signedIn.wrappedValue = .isLoading
         authRepository.signIn { result in
             switch result {

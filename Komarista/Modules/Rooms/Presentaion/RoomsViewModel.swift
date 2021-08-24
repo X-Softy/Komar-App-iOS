@@ -20,7 +20,7 @@ extension Rooms {
         }
 
         func loadRooms() {
-            roomsService.rooms(categoryId: category.id, loadableSubject(\.rooms))
+            roomsService.rooms(categoryId: category.id, subject(\.rooms))
         }
     }
 }

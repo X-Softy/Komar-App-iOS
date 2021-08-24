@@ -12,6 +12,7 @@ struct CategoryList: View {
 
     var body: some View {
         Group { content }
+            .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("category.list.bar.title")
             .alert(error: $viewModel.error)
     }

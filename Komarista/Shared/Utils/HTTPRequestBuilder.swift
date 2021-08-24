@@ -127,7 +127,7 @@ struct ContentTypeUrlEncoded: ContentTypeInfo {
 }
 
 /// .json
-struct ContentTypeJson: ContentTypeInfo {
+struct ContentTypeJSON: ContentTypeInfo {
     let contentType: ContentType = .json
     typealias NextProtocol = JsonContentSetterHTTPRequestBuilder &
                              UrlRequestBuilderHTTPRequestBuilder

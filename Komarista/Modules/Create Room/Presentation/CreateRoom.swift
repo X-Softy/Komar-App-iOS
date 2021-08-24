@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct CreateRoom: View {
-    @ObservedObject private var viewModel: ViewModel = .init()
+    @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
         Group { content }
             .navigationBarTitle("create.room.bar.title")
+            .onDisappear(perform: viewModel.params.onDisappear)
             .alert(error: $viewModel.error)
     }
 
@@ -60,6 +61,6 @@ struct CreateRoom: View {
 
 struct CreateRoom_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRoom()
+        CreateRoom(viewModel: .init())
     }
 }

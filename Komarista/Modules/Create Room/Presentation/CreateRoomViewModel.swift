@@ -10,6 +10,7 @@ import SwiftUI
 
 extension CreateRoom {
     class ViewModel: ObservableObject {
+        let params: Params
         @Published var title: String = ""
         @Published var description: String = ""
         @Published var disabled: Bool = true
@@ -21,7 +22,17 @@ extension CreateRoom {
         private var createRoomService: CreateRoomService = DefaultCreateRoomService()
         private var cancelBag = CancelBag()
 
-        init() {
+        struct Params {
+            let onDisappear: (() -> Void)?
+
+            init(onDisappear: (() -> Void)? = nil) {
+                self.onDisappear = onDisappear
+            }
+        }
+
+        init(with params: Params = .init()) {
+            self.params = params
+
             Publishers.CombineLatest3($title, $description, $selectedCategory)
                 .sink { [weak self] title, description, selectedCategory in
                     self?.disabled = title.isEmpty || description.isEmpty || selectedCategory.isEmpty
@@ -34,7 +45,7 @@ extension CreateRoom {
         }
 
         func loadCategoryList() {
-            categoryListService.categories(loadableSubject(\.categories))
+            categoryListService.categories(subject(\.categories))
         }
 
         func createRoom() {
@@ -44,7 +55,7 @@ extension CreateRoom {
                     title: title,
                     description: description
                 ),
-                loadableSubject(\.created)
+                subject(\.created)
             )
         }
 

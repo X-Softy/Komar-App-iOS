@@ -37,6 +37,12 @@
 		C72865DB26D412A700BB0645 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865DA26D412A700BB0645 /* Root.swift */; };
 		C72865F526D462D200BB0645 /* CreateRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865F426D462D200BB0645 /* CreateRoomDTO.swift */; };
 		C72865FD26D4EBD200BB0645 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72865FC26D4EBD200BB0645 /* None.swift */; };
+		C728660326D5083A00BB0645 /* DeleteRoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728660226D5083A00BB0645 /* DeleteRoomRepository.swift */; };
+		C728660826D5084F00BB0645 /* JoinUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728660726D5084F00BB0645 /* JoinUserRepository.swift */; };
+		C728660D26D5086200BB0645 /* UnjoinUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728660C26D5086200BB0645 /* UnjoinUserRepository.swift */; };
+		C728661226D5087500BB0645 /* AddCommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728661126D5087500BB0645 /* AddCommentRepository.swift */; };
+		C728661826D5088700BB0645 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728661726D5088700BB0645 /* RoomService.swift */; };
+		C728661D26D50B3900BB0645 /* RoomDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728661C26D50B3900BB0645 /* RoomDetailsRepository.swift */; };
 		C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */; };
 		C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944C526CA9D9000C04962 /* WebRepository.swift */; };
 		C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */; };
@@ -116,6 +122,12 @@
 		C72865DA26D412A700BB0645 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		C72865F426D462D200BB0645 /* CreateRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomDTO.swift; sourceTree = "<group>"; };
 		C72865FC26D4EBD200BB0645 /* None.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = None.swift; sourceTree = "<group>"; };
+		C728660226D5083A00BB0645 /* DeleteRoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRoomRepository.swift; sourceTree = "<group>"; };
+		C728660726D5084F00BB0645 /* JoinUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUserRepository.swift; sourceTree = "<group>"; };
+		C728660C26D5086200BB0645 /* UnjoinUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnjoinUserRepository.swift; sourceTree = "<group>"; };
+		C728661126D5087500BB0645 /* AddCommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentRepository.swift; sourceTree = "<group>"; };
+		C728661726D5088700BB0645 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
+		C728661C26D50B3900BB0645 /* RoomDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsRepository.swift; sourceTree = "<group>"; };
 		C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
 		C78944C526CA9D9000C04962 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		C78944CA26CA9DF900C04962 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
@@ -309,6 +321,8 @@
 		C72865B026D3CCE500BB0645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C728661626D5087900BB0645 /* Service */,
+				C728660126D5081200BB0645 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -356,6 +370,26 @@
 				C72865DA26D412A700BB0645 /* Root.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		C728660126D5081200BB0645 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C728661C26D50B3900BB0645 /* RoomDetailsRepository.swift */,
+				C728660226D5083A00BB0645 /* DeleteRoomRepository.swift */,
+				C728660726D5084F00BB0645 /* JoinUserRepository.swift */,
+				C728660C26D5086200BB0645 /* UnjoinUserRepository.swift */,
+				C728661126D5087500BB0645 /* AddCommentRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C728661626D5087900BB0645 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C728661726D5088700BB0645 /* RoomService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
@@ -800,6 +834,7 @@
 				C79297EE26BF05F70022716D /* AppDelegate.swift in Sources */,
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
+				C728660D26D5086200BB0645 /* UnjoinUserRepository.swift in Sources */,
 				C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */,
 				C72865D226D3E30500BB0645 /* CreateRoomRepository.swift in Sources */,
 				C72865FD26D4EBD200BB0645 /* None.swift in Sources */,
@@ -807,11 +842,14 @@
 				C728656226D2D90000BB0645 /* Publisher+Extension.swift in Sources */,
 				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
 				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
+				C728661D26D50B3900BB0645 /* RoomDetailsRepository.swift in Sources */,
+				C728660826D5084F00BB0645 /* JoinUserRepository.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C72865A826D3C71800BB0645 /* RoomEntities.swift in Sources */,
 				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
 				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
+				C728660326D5083A00BB0645 /* DeleteRoomRepository.swift in Sources */,
 				C728658E26D3AFA200BB0645 /* RoomsViewModel.swift in Sources */,
 				C789450A26CD3AD000C04962 /* UserSession.swift in Sources */,
 				C72865B626D3D61700BB0645 /* Room.swift in Sources */,
@@ -827,6 +865,8 @@
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
 				C7B540BE26D174320011192E /* CancelBag.swift in Sources */,
+				C728661226D5087500BB0645 /* AddCommentRepository.swift in Sources */,
+				C728661826D5088700BB0645 /* RoomService.swift in Sources */,
 				C75B1D0126CFB13400C9C527 /* ErrorEntity.swift in Sources */,
 				C72865CD26D3E2F100BB0645 /* CreateRoomService.swift in Sources */,
 				C72865A026D3AFFB00BB0645 /* Rooms.swift in Sources */,

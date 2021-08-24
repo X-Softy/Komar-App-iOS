@@ -15,7 +15,7 @@ extension CategoryList {
         private var categoryListService: CategoryListService = DefaultCategoryListService()
 
         func loadCategoryList() {
-            categoryListService.categories(loadableSubject(\.categories))
+            categoryListService.categories(subject(\.categories))
         }
     }
 }

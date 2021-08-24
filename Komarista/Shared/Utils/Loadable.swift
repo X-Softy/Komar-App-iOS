@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-typealias LoadableSubject<T> = Binding<Loadable<T>>
-
 enum Loadable<T> {
     case notRequested
     case isLoading

@@ -272,7 +272,7 @@ class HTTPRequestBuilderTests: XCTestCase {
             .set(baseURL: notSecuredBaseURL)
             .set(path: path)
             .set(method: HTTPMethodPatch())
-            .set(contentType: ContentTypeJson())
+            .set(contentType: ContentTypeJSON())
             .setBody(json: jsonObj)
             .build()
 

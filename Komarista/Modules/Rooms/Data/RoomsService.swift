@@ -9,14 +9,14 @@ import Combine
 import SwiftUI
 
 protocol RoomsService {
-    mutating func rooms(categoryId: String, _ rooms: LoadableSubject<[RoomBrief]>)
+    mutating func rooms(categoryId: String, _ rooms: Binding<Loadable<[RoomBrief]>>)
 }
 
 struct DefaultRoomsService: RoomsService {
     private let roomsRepository: RoomsRepository = DefaultRoomsRepository()
     private var cancelBag = CancelBag()
 
-    mutating func rooms(categoryId: String, _ rooms: LoadableSubject<[RoomBrief]>) {
+    mutating func rooms(categoryId: String, _ rooms: Binding<Loadable<[RoomBrief]>>) {
         rooms.wrappedValue = .isLoading
         roomsRepository.rooms(categoryId: categoryId)
             .sinkToLoadable { rooms.wrappedValue = $0 }

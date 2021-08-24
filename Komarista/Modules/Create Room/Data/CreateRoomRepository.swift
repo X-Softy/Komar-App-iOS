@@ -16,7 +16,7 @@ struct DefaultCreateRoomRepository: CreateRoomRepository {
         call(with: requestBuilder
                        .set(path: "/rooms")
                        .set(method: HTTPMethodPost())
-                       .set(contentType: ContentTypeJson())
+                       .set(contentType: ContentTypeJSON())
                        .setBody(json: room))
     }
 }
