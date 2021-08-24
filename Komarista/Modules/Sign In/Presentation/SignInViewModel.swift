@@ -10,19 +10,17 @@ import SwiftUI
 
 extension SignIn {
     class ViewModel: ObservableObject {
-        // View state
         @Published var disabled: Bool
         @Published var label: LocalizedStringKey
         @Published var error: ErrorEntity?
         @Published var navigate2Home: Bool = false
-        // View model state
         @Published private var signedIn: Loadable<Bool>
 
         private let authService: AuthService = DefaultAuthService()
         private var cancelables = CancelBag()
 
         init() {
-            let signedIn: Loadable<Bool> = .notRequested // default value
+            let signedIn: Loadable<Bool> = .notRequested
             let (disabled, label, error) = signedIn.toViewState()
 
             _signedIn = .init(initialValue: signedIn)

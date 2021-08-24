@@ -35,6 +35,7 @@
 
 /* My Rooms */
 "my.rooms.bar.title" = "My Rooms";
+"my.rooms.button.title" = "Create Room";
 
 /* Rooms */
 "rooms.bar.title" = "Rooms";

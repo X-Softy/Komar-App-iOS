@@ -31,7 +31,9 @@ struct MyRooms: View {
 
     private func list(rooms: [RoomBrief]) -> some View {
         VStack {
-            NavigationLink(destination: CreateRoom(viewModel: .init(with: .init(onDisappear: viewModel.loadRooms)))) { Text("Create Room") }
+            NavigationLink(destination: CreateRoom(viewModel: .init(with: .init(onDisappear: viewModel.loadRooms)))) {
+                Text("my.rooms.button.title")
+            }
             List {
                 ForEach(rooms) { room in
                     NavigationLink(destination: Room(viewModel: .init(with: .init(room: room, onDisappear: viewModel.loadRooms)))) {
