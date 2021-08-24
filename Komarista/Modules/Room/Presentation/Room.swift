@@ -9,11 +9,21 @@ import SwiftUI
 
 struct Room: View {
     @ObservedObject private(set) var viewModel: ViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
-        Group { Text("Room: \(viewModel.params.room.title)") }
-            .navigationBarTitle("room.bar.title")
-            .onDisappear(perform: viewModel.params.onDisappear)
+        Group {
+            Button {
+                viewModel.action()
+            } label: {
+                Text(viewModel.button.rawValue)
+            }
+            .disabled(viewModel.button == .inactive)
+        }
+        .navigationBarTitle("room.bar.title")
+        .onDisappear(perform: viewModel.params.onDisappear)
+        .alert(error: $viewModel.error, action: viewModel.dismiss ? { presentationMode.wrappedValue.dismiss() } : nil)
+        .onAppear(perform: viewModel.loadDetails)
     }
 }
 

@@ -8,10 +8,17 @@
 import SwiftUI
 
 extension View {
-    func alert(error: Binding<ErrorEntity?>) -> some View {
-        alert(item: error) {
+    func alert(error: Binding<ErrorEntity?>, action: (() -> Void)? = nil) -> some View {
+        let dismissButton: Alert.Button? = {
+            let title: LocalizedStringKey = "error.alert.dismiss.title"
+            if let action = action {
+                return .default(.init(title), action: action)
+            }
+            return .default(.init(title))
+        }()
+        return alert(item: error) {
             .init(title: .init(verbatim: $0.message), // message is already localized
-                  dismissButton: .default(.init("error.alert.dismiss.title")))
+                               dismissButton: dismissButton)
         }
     }
 }

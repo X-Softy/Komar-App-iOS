@@ -9,12 +9,12 @@ import Combine
 
 extension Publisher {
     func sinkToLoadable(_ completion: @escaping (Loadable<Output>) -> Void) -> AnyCancellable where Self.Failure == ErrorEntity {
-        sink(receiveCompletion: { subscriptionCompletion in
+        sink { subscriptionCompletion in
             if case .failure(let error) = subscriptionCompletion {
                 completion(.failed(error))
             }
-        }, receiveValue: { value in
+        } receiveValue: { value in
             completion(.loaded(value))
-        })
+        }
     }
 }

@@ -42,6 +42,7 @@
 
 /* Room */
 "room.bar.title" = "Details";
+"room.delete.success" = "Room Deleted";
 
 /* Create Room */
 "create.room.bar.title" = "Create Room";

@@ -16,7 +16,7 @@ extension CreateRoom {
         @Published var disabled: Bool = true
         @Published var selectedCategory: String = ""
         @Published var categories: Loadable<[Category]> = .notRequested
-        @Published var created: Loadable<Void> = .notRequested
+        @Published var created: Loadable<None> = .notRequested
         @Published var error: ErrorEntity? = nil
         private var categoryListService: CategoryListService = DefaultCategoryListService()
         private var createRoomService: CreateRoomService = DefaultCreateRoomService()
@@ -59,7 +59,7 @@ extension CreateRoom {
             )
         }
 
-        private func handle(created: Loadable<Void>) {
+        private func handle(created: Loadable<None>) {
             switch created {
             case .notRequested:
                 break // initial value
