@@ -11,6 +11,7 @@ import SwiftUI
 extension CategoryList {
     class ViewModel: ObservableObject {
         @Published var categories: Loadable<[Category]> = .notRequested
+        @Published var error: ErrorEntity? = nil
         private var categoryListService: CategoryListService = DefaultCategoryListService()
 
         func loadCategoryList() {

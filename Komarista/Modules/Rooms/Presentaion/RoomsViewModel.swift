@@ -11,6 +11,7 @@ import SwiftUI
 extension Rooms {
     class ViewModel: ObservableObject {
         @Published var rooms: Loadable<[RoomBrief]> = .notRequested
+        @Published var error: ErrorEntity? = nil
         let category: Category
         private var roomsService: RoomsService = DefaultRoomsService()
 

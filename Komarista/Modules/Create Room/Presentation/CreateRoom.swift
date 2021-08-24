@@ -9,12 +9,11 @@ import SwiftUI
 
 struct CreateRoom: View {
     @ObservedObject private var viewModel: ViewModel = .init()
-    @State private var error: ErrorEntity? = nil
 
     var body: some View {
         Group { content }
             .navigationBarTitle("create.room.bar.title")
-            .alert(error: $error)
+            .alert(error: $viewModel.error)
     }
 
     private var content: AnyView {
@@ -24,7 +23,7 @@ struct CreateRoom: View {
         case .loaded(let categories):
             return AnyView(list(categories: categories))
         case .failed(let error):
-            self.error = error
+            viewModel.error = error
             return AnyView(errorView)
         }
     }

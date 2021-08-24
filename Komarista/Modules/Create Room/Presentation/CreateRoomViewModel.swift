@@ -15,7 +15,10 @@ extension CreateRoom {
         @Published var disabled: Bool = true
         @Published var selectedCategory: String = ""
         @Published var categories: Loadable<[Category]> = .notRequested
+        @Published var created: Loadable<Void> = .notRequested
+        @Published var error: ErrorEntity? = nil
         private var categoryListService: CategoryListService = DefaultCategoryListService()
+        private var createRoomService: CreateRoomService = DefaultCreateRoomService()
         private var cancelBag = CancelBag()
 
         init() {
@@ -24,6 +27,17 @@ extension CreateRoom {
                     self?.disabled = title.isEmpty || description.isEmpty || selectedCategory.isEmpty
                 }
                 .store(in: &cancelBag)
+
+            $created.sink { [weak self] in
+                guard let self = self else { return }
+                switch $0 {
+                case .notRequested: break // initial value
+                case .isLoading: break    // TODO: change button to loading state
+                case .loaded: self.error = .init(message: "Created")
+                case .failed(let error): self.error = error
+                }
+            }
+            .store(in: &cancelBag)
         }
 
         func loadCategoryList() {
@@ -31,7 +45,14 @@ extension CreateRoom {
         }
 
         func createRoom() {
-            print("Creating:", selectedCategory, title, description)
+            createRoomService.create(
+                room: .init(
+                    categoryId: selectedCategory,
+                    title: title,
+                    description: description
+                ),
+                loadableSubject(\.created)
+            )
         }
     }
 }
