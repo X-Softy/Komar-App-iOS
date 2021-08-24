@@ -11,51 +11,34 @@ struct CreateRoom: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Group { content }
-            .navigationBarTitle("create.room.bar.title")
-            .onDisappear(perform: viewModel.params.onDisappear)
-            .alert(error: $viewModel.error)
-    }
-
-    private var content: AnyView {
-        switch viewModel.categories {
-        case .notRequested, .isLoading:
-            return AnyView(loadingView)
-        case .loaded(let categories):
-            return AnyView(list(categories: categories))
-        case .failed(let error):
-            viewModel.error = error
-            return AnyView(errorView)
-        }
-    }
-
-    private func list(categories: [Category]) -> some View {
-        Form {
-            Section {
-                Picker("create.room.picker.title", selection: $viewModel.selectedCategory) {
-                    Text("create.room.category.placeholder")
-                    ForEach(categories) {
-                        Text($0.title)
+        Group {
+            content(
+                listen: viewModel.categories,
+                call: viewModel.loadCategoryList,
+                error: $viewModel.error
+            ) { categories in
+                Form {
+                    Section {
+                        Picker("create.room.picker.title", selection: $viewModel.selectedCategory) {
+                            Text("create.room.category.placeholder")
+                            ForEach(categories) {
+                                Text($0.title)
+                            }
+                        }.pickerStyle(WheelPickerStyle())
                     }
-                }.pickerStyle(WheelPickerStyle())
+                    Section {
+                        TextField("create.room.title.placeholder", text: $viewModel.title)
+                        TextField("create.room.description.placeholder", text: $viewModel.description)
+                    }
+                    Button(action: viewModel.createRoom, label: {
+                        Text("create.room.button.title")
+                    }).disabled(viewModel.disabled)
+                }
             }
-            Section {
-                TextField("create.room.title.placeholder", text: $viewModel.title)
-                TextField("create.room.description.placeholder", text: $viewModel.description)
-            }
-            Button(action: viewModel.createRoom, label: {
-                Text("create.room.button.title")
-            }).disabled(viewModel.disabled)
         }
-    }
-
-    private var loadingView: some View {
-        ActivityIndicatorView()
-            .onAppear(perform: viewModel.loadCategoryList)
-    }
-
-    private var errorView: some View {
-        EmptyView()
+        .navigationBarTitle("create.room.bar.title")
+        .onDisappear(perform: viewModel.params.onDisappear)
+        .alert(error: $viewModel.error)
     }
 }
 
