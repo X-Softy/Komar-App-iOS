@@ -12,11 +12,11 @@ protocol RoomService {
     mutating func details(_ details: Binding<Loadable<RoomDetailed>>,
                           _ button: Binding<Room.ViewModel.Button>)
     mutating func delete(_ button: Binding<Room.ViewModel.Button>,
-                         _ error: Binding<Room.ViewModel.Dismissable?>)
+                         _ error: Binding<ErrorEntity?>)
     mutating func join(_ button: Binding<Room.ViewModel.Button>,
-                       _ error: Binding<Room.ViewModel.Dismissable?>)
+                       _ error: Binding<ErrorEntity?>)
     mutating func unjoin(_ button: Binding<Room.ViewModel.Button>,
-                         _ error: Binding<Room.ViewModel.Dismissable?>)
+                         _ error: Binding<ErrorEntity?>)
 }
 
 struct DefaultRoomService: RoomService {
@@ -56,28 +56,28 @@ struct DefaultRoomService: RoomService {
     }
 
     mutating func delete(_ button: Binding<Room.ViewModel.Button>,
-                         _ error: Binding<Room.ViewModel.Dismissable?>) {
+                         _ error: Binding<ErrorEntity?>) {
         button.wrappedValue = .inactive
         deleteRoomRepository.delete(room: room.id)
             .sink { completion in
-                if case .failure(let entity) = completion {
+                if case .failure(let cause) = completion {
                     button.wrappedValue = .delete
-                    error.wrappedValue = .init(entity: entity)
+                    error.wrappedValue = cause
                 }
             } receiveValue: { _ in
-                error.wrappedValue = .init(entity: .init(message: "room.delete.success".localized), dismiss: true)
+                error.wrappedValue = .init(message: "room.delete.success".localized)
             }
             .store(in: &cancelBag)
     }
 
     mutating func join(_ button: Binding<Room.ViewModel.Button>,
-                       _ error: Binding<Room.ViewModel.Dismissable?>) {
+                       _ error: Binding<ErrorEntity?>) {
         button.wrappedValue = .inactive
         joinUserRepository.join(to: room.id)
             .sink { completion in
-                if case .failure(let entity) = completion {
+                if case .failure(let cause) = completion {
                     button.wrappedValue = .join
-                    error.wrappedValue = .init(entity: entity)
+                    error.wrappedValue = cause
                 }
             } receiveValue: { _ in
                 button.wrappedValue = .unjoin
@@ -86,13 +86,13 @@ struct DefaultRoomService: RoomService {
     }
 
     mutating func unjoin(_ button: Binding<Room.ViewModel.Button>,
-                         _ error: Binding<Room.ViewModel.Dismissable?>) {
+                         _ error: Binding<ErrorEntity?>) {
         button.wrappedValue = .inactive
         unjoinUserRepository.unjoin(from: room.id)
             .sink { completion in
-                if case .failure(let entity) = completion {
+                if case .failure(let cause) = completion {
                     button.wrappedValue = .unjoin
-                    error.wrappedValue = .init(entity: entity)
+                    error.wrappedValue = cause
                 }
             } receiveValue: { _ in
                 button.wrappedValue = .join

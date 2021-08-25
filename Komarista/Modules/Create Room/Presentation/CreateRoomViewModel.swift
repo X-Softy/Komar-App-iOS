@@ -10,7 +10,6 @@ import SwiftUI
 
 extension CreateRoom {
     class ViewModel: ObservableObject {
-        let params: Params
         @Published var title: String = ""
         @Published var description: String = ""
         @Published var disabled: Bool = true
@@ -22,17 +21,7 @@ extension CreateRoom {
         private var createRoomService: CreateRoomService = DefaultCreateRoomService()
         private var cancelBag = CancelBag()
 
-        struct Params {
-            let onDisappear: (() -> Void)?
-
-            init(onDisappear: (() -> Void)? = nil) {
-                self.onDisappear = onDisappear
-            }
-        }
-
-        init(with params: Params = .init()) {
-            self.params = params
-
+        init() {
             Publishers.CombineLatest3($title, $description, $selectedCategory)
                 .sink { [weak self] title, description, selectedCategory in
                     self?.disabled = title.isEmpty || description.isEmpty || selectedCategory.isEmpty
@@ -45,6 +34,7 @@ extension CreateRoom {
         }
 
         func loadCategoryList() {
+            print("Load Categories")
             categoryListService.categories(subject(\.categories))
         }
 
@@ -68,8 +58,8 @@ extension CreateRoom {
             case .loaded:
                 error = .init(message: "create.room.created".localized)
                 disabled = false
-            case .failed(let error):
-                self.error = error
+            case .failed(let cause):
+                error = cause
                 disabled = false
             }
         }

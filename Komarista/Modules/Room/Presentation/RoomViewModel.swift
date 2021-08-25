@@ -12,11 +12,9 @@ extension Room {
     class ViewModel: ObservableObject {
         @Published var details: Loadable<RoomDetailed> = .notRequested
         @Published var button: Button = .inactive
-        @Published private var dismissable: Dismissable? = nil
         @Published var error: ErrorEntity? = nil
-        var dismiss = false
-        let params: Params
-        private lazy var roomService: RoomService = DefaultRoomService(room: params.room)
+        let room: RoomBrief
+        private lazy var roomService: RoomService = DefaultRoomService(room: room)
         private var cancelBag = CancelBag()
 
         enum Button: String {
@@ -37,29 +35,8 @@ extension Room {
             }
         }
 
-        struct Params {
-            let room: RoomBrief
-            let onDisappear: (() -> Void)?
-
-            init(room: RoomBrief, onDisappear: (() -> Void)? = nil) {
-                self.room = room
-                self.onDisappear = onDisappear
-            }
-        }
-
-        init(with params: Params) {
-            self.params = params
-
-            $dismissable.sink { [weak self] in
-                guard let self = self else { return }
-                guard let dismissable = $0 else {
-                    self.error = nil
-                    return
-                }
-                self.dismiss = dismissable.dismiss
-                self.error = dismissable.entity
-            }
-            .store(in: &cancelBag)
+        init(room: RoomBrief) {
+            self.room = room
         }
 
         func loadDetails() {
@@ -68,9 +45,9 @@ extension Room {
 
         func action() {
             switch button {
-            case .delete: roomService.delete(subject(\.button), subject(\.dismissable))
-            case .join:   roomService.join(subject(\.button), subject(\.dismissable))
-            case .unjoin: roomService.unjoin(subject(\.button), subject(\.dismissable))
+            case .delete: roomService.delete(subject(\.button), subject(\.error))
+            case .join:   roomService.join(subject(\.button), subject(\.error))
+            case .unjoin: roomService.unjoin(subject(\.button), subject(\.error))
             case .inactive: break
             }
         }

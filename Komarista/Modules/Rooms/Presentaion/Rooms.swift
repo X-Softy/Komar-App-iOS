@@ -11,15 +11,11 @@ struct Rooms: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Group {
-            content(
-                listen: viewModel.rooms,
-                call: viewModel.loadRooms,
-                error: $viewModel.error
-            ) { rooms in
+        ZStack {
+            content(of: viewModel.rooms, $viewModel.error) { rooms in
                 List {
                     ForEach(rooms) { room in
-                        NavigationLink(destination: Room(viewModel: .init(with: .init(room: room, onDisappear: viewModel.loadRooms)))) {
+                        NavigationLink(destination: Room(viewModel: .init(room: room))) {
                             Text(room.title)
                         }
                     }
@@ -28,6 +24,7 @@ struct Rooms: View {
         }
         .navigationBarTitle("rooms.bar.title")
         .alert(error: $viewModel.error)
+        .onAppear(perform: viewModel.loadRooms)
     }
 }
 

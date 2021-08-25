@@ -11,12 +11,8 @@ struct CategoryList: View {
     @ObservedObject private var viewModel: ViewModel = .init()
 
     var body: some View {
-        Group {
-            content(
-                listen: viewModel.categories,
-                call: viewModel.loadCategoryList,
-                error: $viewModel.error
-            ) { categories in
+        ZStack {
+            content(of: viewModel.categories, $viewModel.error) { categories in
                 List {
                     ForEach(categories) { category in
                         NavigationLink(destination: Rooms(viewModel: .init(of: category))) {
@@ -29,6 +25,7 @@ struct CategoryList: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarTitle("category.list.bar.title")
         .alert(error: $viewModel.error)
+        .onAppear(perform: viewModel.loadCategoryList)
     }
 }
 

@@ -8,45 +8,31 @@
 import SwiftUI
 
 extension View {
-    func alert(error: Binding<ErrorEntity?>, action: (() -> Void)? = nil) -> some View {
-        let dismissButton: Alert.Button? = {
-            let title: LocalizedStringKey = "error.alert.dismiss.title"
-            if let action = action {
-                return .default(.init(title), action: action)
-            }
-            return .default(.init(title))
-        }()
-        return alert(item: error) {
+    func alert(error: Binding<ErrorEntity?>) -> some View {
+        alert(item: error) {
             .init(title: .init(verbatim: $0.message), // message is already localized
-                               dismissButton: dismissButton)
+                               dismissButton: .default(.init("error.alert.dismiss.title")))
         }
     }
 }
 
 extension View {
     func content<DataType, ViewType: View>(
-        listen: Loadable<DataType>,
-        call: @escaping () -> Void,
-        error entity: Binding<ErrorEntity?>,
-        receive: @escaping (DataType) -> ViewType
+        of loadable: Loadable<DataType>,
+        _ error: Binding<ErrorEntity?>,
+        _ loaded: @escaping (DataType) -> ViewType
     ) -> AnyView {
-        switch listen {
+        switch loadable {
         case .notRequested, .isLoading:
-            return AnyView(loadingView(onAppear: call))
+            return AnyView(loader)
         case .loaded(let data):
-            return AnyView(receive(data))
-        case .failed(let error):
-            entity.wrappedValue = error
-            return AnyView(errorView)
+            return AnyView(loaded(data))
+        case .failed(let cause):
+            error.wrappedValue = cause
+            return AnyView(self.error)
         }
     }
 
-    func loadingView(onAppear: (() -> Void)? = nil) -> some View {
-        ActivityIndicatorView()
-            .onAppear(perform: onAppear)
-    }
-
-    var errorView: some View {
-        EmptyView()
-    }
+    var loader: some View { ActivityIndicatorView() }
+    var error: some View { EmptyView() }
 }

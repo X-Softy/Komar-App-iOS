@@ -30,9 +30,7 @@ extension WebRepository {
                 return data
             }
             .map { data in
-                if data.count == 0 {
-                    return "{}".data(using: .utf8) ?? data
-                }
+                if data.count == 0 { return "{}".data(using: .utf8) ?? data }
                 return data
             }
             .decode(type: Response.self, decoder: JSONDecoder())

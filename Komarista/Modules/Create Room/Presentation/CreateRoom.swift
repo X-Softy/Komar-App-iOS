@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct CreateRoom: View {
-    @ObservedObject private(set) var viewModel: ViewModel
+    @ObservedObject private(set) var viewModel: ViewModel = .init()
 
     var body: some View {
-        Group {
-            content(
-                listen: viewModel.categories,
-                call: viewModel.loadCategoryList,
-                error: $viewModel.error
-            ) { categories in
+        ZStack {
+            content(of: viewModel.categories, $viewModel.error) { categories in
                 Form {
                     Section {
                         Picker("create.room.picker.title", selection: $viewModel.selectedCategory) {
@@ -37,8 +33,8 @@ struct CreateRoom: View {
             }
         }
         .navigationBarTitle("create.room.bar.title")
-        .onDisappear(perform: viewModel.params.onDisappear)
         .alert(error: $viewModel.error)
+        .onAppear(perform: viewModel.loadCategoryList)
     }
 }
 
