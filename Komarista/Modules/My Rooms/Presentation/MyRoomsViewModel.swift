@@ -13,9 +13,14 @@ extension MyRooms {
         @Published var rooms: Loadable<[RoomBrief]> = .notRequested
         @Published var error: ErrorEntity? = nil
         private var roomsService: MyRoomsService = DefaultMyRoomsService()
+        private let authRepository: AuthRepository = DefaultAuthRepository.shared
 
         func loadRooms() {
             roomsService.rooms(subject(\.rooms))
+        }
+
+        func signOut() {
+            authRepository.signOut()
         }
     }
 }

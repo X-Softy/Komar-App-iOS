@@ -26,6 +26,9 @@
 "auth.sign.in.button.loading" = "Loading";
 "auth.sign.in.button.try.again" = "Try again";
 
+/* Sign Out */
+"auth.sign.out.title" = "Sign Out";
+
 /* Home */
 "home.tab.title.category.list" = "Categories";
 "home.tab.title.my.rooms" = "My Rooms";

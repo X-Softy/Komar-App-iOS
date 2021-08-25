@@ -11,10 +11,8 @@ struct Root: View {
     @ObservedObject private var userSession: UserSession = .shared
 
     var body: some View {
-        Group {
-            if userSession.state == nil { SignIn() }
-            else { Home() }
-        }
+        if userSession.state == nil { SignIn() }
+        else { Home() }
     }
 }
 

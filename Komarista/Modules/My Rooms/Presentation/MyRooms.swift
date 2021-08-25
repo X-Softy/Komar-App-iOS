@@ -17,6 +17,7 @@ struct MyRooms: View {
                     NavigationLink(destination: CreateRoom()) {
                         Text("my.rooms.button.title")
                     }
+                    Button(action: viewModel.signOut) { Text("auth.sign.out.title") }
                     List {
                         ForEach(rooms) { room in
                             NavigationLink(destination: Room(viewModel: .init(room: room))) {
