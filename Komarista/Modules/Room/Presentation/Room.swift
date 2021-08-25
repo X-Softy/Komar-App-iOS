@@ -12,8 +12,28 @@ struct Room: View {
 
     var body: some View {
         ZStack {
-            Button(action: viewModel.action) { Text(viewModel.button.rawValue) }
-                .disabled(viewModel.button == .inactive)
+            content(of: viewModel.details, $viewModel.error) { details in
+                VStack {
+                    Button(action: viewModel.action) { Text(viewModel.button.rawValue) }
+                        .disabled(viewModel.button == .inactive)
+                    Text(details.title)
+                    Text(details.description)
+                    List {
+                        ForEach(viewModel.comments) { comment in
+                            HStack {
+                                Text(comment.userId)
+                                Text(comment.comment)
+                            }
+                        }
+                    }
+                    HStack {
+                        TextField("room.comment.placeholder", text: $viewModel.comment)
+                        Button(action: viewModel.send, label: {
+                            Text("room.send.title")
+                        }).disabled(viewModel.disabled)
+                    }
+                }
+            }
         }
         .navigationBarTitle("room.bar.title")
         .alert(error: $viewModel.error)

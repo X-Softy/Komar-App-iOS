@@ -43,6 +43,8 @@
 /* Room */
 "room.bar.title" = "Details";
 "room.delete.success" = "Room Deleted";
+"room.comment.placeholder" = "Aa";
+"room.send.title" = "Send";
 
 /* Create Room */
 "create.room.bar.title" = "Create Room";

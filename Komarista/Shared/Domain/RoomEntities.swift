@@ -13,7 +13,8 @@ struct RoomBrief: Decodable, Identifiable {
 }
 
 struct RoomDetailed: Decodable, Identifiable {
-    struct Comment: Decodable {
+    struct Comment: Decodable, Identifiable {
+        var id: String { "\(userId)\(comment)" }
         let userId: String
         let comment: String
     }

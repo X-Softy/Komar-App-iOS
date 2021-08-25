@@ -17,6 +17,10 @@ protocol RoomService {
                        _ error: Binding<ErrorEntity?>)
     mutating func unjoin(_ button: Binding<Room.ViewModel.Button>,
                          _ error: Binding<ErrorEntity?>)
+    mutating func add(comment: String,
+                      _ comments: Binding<[RoomDetailed.Comment]>,
+                      _ disabled: Binding<Bool>,
+                      _ error: Binding<ErrorEntity?>)
 }
 
 struct DefaultRoomService: RoomService {
@@ -96,6 +100,25 @@ struct DefaultRoomService: RoomService {
                 }
             } receiveValue: { _ in
                 button.wrappedValue = .join
+            }
+            .store(in: &cancelBag)
+    }
+
+    mutating func add(comment: String,
+                      _ comments: Binding<[RoomDetailed.Comment]>,
+                      _ disabled: Binding<Bool>,
+                      _ error: Binding<ErrorEntity?>) {
+        disabled.wrappedValue = true
+        addCommentRepository.add(comment: comment, to: room.id)
+            .sink { completion in
+                if case .failure(let cause) = completion {
+                    disabled.wrappedValue = false
+                    error.wrappedValue = cause
+                }
+            } receiveValue: { [self] _ in
+                guard let session = userSession.state else { return }
+                let comment = RoomDetailed.Comment(userId: session.userId, comment: comment)
+                comments.wrappedValue.append(comment)
             }
             .store(in: &cancelBag)
     }

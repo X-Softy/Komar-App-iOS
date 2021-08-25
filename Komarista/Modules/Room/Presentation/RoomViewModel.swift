@@ -11,7 +11,10 @@ import SwiftUI
 extension Room {
     class ViewModel: ObservableObject {
         @Published var details: Loadable<RoomDetailed> = .notRequested
+        @Published var comments: [RoomDetailed.Comment] = []
         @Published var button: Button = .inactive
+        @Published var comment: String = ""
+        @Published var disabled: Bool = true
         @Published var error: ErrorEntity? = nil
         let room: RoomBrief
         private lazy var roomService: RoomService = DefaultRoomService(room: room)
@@ -25,18 +28,26 @@ extension Room {
             case delete
         }
 
-        struct Dismissable {
-            let entity: ErrorEntity
-            let dismiss: Bool
-
-            init(entity: ErrorEntity, dismiss: Bool = false) {
-                self.entity = entity
-                self.dismiss = dismiss
-            }
-        }
-
         init(room: RoomBrief) {
             self.room = room
+
+            $details
+                .sink { [weak self] details in
+                    if case .loaded(let details) = details {
+                        self?.comments = details.comments
+                    }
+                }
+                .store(in: &cancelBag)
+
+            Publishers.CombineLatest($button, $comment)
+                .sink { [weak self] button, comment in
+                    guard let self = self else { return }
+                    switch button {
+                    case .inactive, .join: self.disabled = true
+                    case .unjoin, .delete: self.disabled = comment.isEmpty
+                    }
+                }
+                .store(in: &cancelBag)
         }
 
         func loadDetails() {
@@ -50,6 +61,10 @@ extension Room {
             case .unjoin: roomService.unjoin(subject(\.button), subject(\.error))
             case .inactive: break
             }
+        }
+
+        func send() {
+            roomService.add(comment: comment, subject(\.comments), subject(\.disabled), subject(\.error))
         }
     }
 }
