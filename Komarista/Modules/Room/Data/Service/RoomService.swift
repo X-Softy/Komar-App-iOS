@@ -116,6 +116,7 @@ struct DefaultRoomService: RoomService {
                     error.wrappedValue = cause
                 }
             } receiveValue: { [self] _ in
+                disabled.wrappedValue = false
                 guard let session = userSession.state else { return }
                 let comment = RoomDetailed.Comment(userId: session.userId, comment: comment)
                 comments.wrappedValue.append(comment)
