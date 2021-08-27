@@ -17,7 +17,7 @@ extension CreateRoom {
         @Published var categories: Loadable<[Category]> = .notRequested
         @Published var created: Loadable<None> = .notRequested
         @Published var error: ErrorEntity? = nil
-        private var categoryListService: CategoryListService = DefaultCategoryListService()
+        private var categoryService: CategoryService = .shared
         private var createRoomService: CreateRoomService = DefaultCreateRoomService()
         private var cancelBag = CancelBag()
 
@@ -28,14 +28,17 @@ extension CreateRoom {
                 }
                 .store(in: &cancelBag)
 
+            categoryService.$categories
+                .sink { [weak self] in self?.categories = $0 }
+                .store(in: &cancelBag)
+
             $created
                 .sink { [weak self] in self?.handle(created: $0) }
                 .store(in: &cancelBag)
         }
 
         func loadCategoryList() {
-            print("Load Categories")
-            categoryListService.categories(subject(\.categories))
+            categoryService.loadIfNeeded()
         }
 
         func createRoom() {

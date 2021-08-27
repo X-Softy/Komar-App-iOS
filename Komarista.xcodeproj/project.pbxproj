@@ -13,7 +13,7 @@
 		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
 		C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864EB26D2A29F00BB0645 /* CategoryList.swift */; };
 		C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */; };
-		C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F926D2A38A00BB0645 /* CategoryListService.swift */; };
+		C72864FA26D2A38A00BB0645 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F926D2A38A00BB0645 /* CategoryService.swift */; };
 		C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */; };
 		C728651026D2A49000BB0645 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728650F26D2A49000BB0645 /* Home.swift */; };
 		C728651826D2CC0500BB0645 /* MyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728651726D2CC0500BB0645 /* MyRooms.swift */; };
@@ -67,6 +67,7 @@
 		C7B540EC26D27B460011192E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B540EB26D27B460011192E /* View+Extension.swift */; };
 		C7B540FB26D27BA30011192E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7B540FD26D27BA30011192E /* Localizable.strings */; };
 		C7B5410226D282660011192E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B5410126D282660011192E /* String+Extension.swift */; };
+		C7ED486926D9473A00E3309C /* ResourceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ED486826D9473A00E3309C /* ResourceRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +99,7 @@
 		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C72864EB26D2A29F00BB0645 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
-		C72864F926D2A38A00BB0645 /* CategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListService.swift; sourceTree = "<group>"; };
+		C72864F926D2A38A00BB0645 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRepository.swift; sourceTree = "<group>"; };
 		C728650F26D2A49000BB0645 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C728651726D2CC0500BB0645 /* MyRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRooms.swift; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 		C7B540EB26D27B460011192E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		C7B540FC26D27BA30011192E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C7B5410126D282660011192E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C7ED486826D9473A00E3309C /* ResourceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRepository.swift; sourceTree = "<group>"; };
 		F1CF3D136052E180F4978578 /* Pods-Komarista-KomaristaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Komarista-KomaristaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Komarista-KomaristaUITests/Pods-Komarista-KomaristaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,11 +214,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C702B94D26D9428100185748 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C72865A726D3C71800BB0645 /* RoomEntities.swift */,
+				C728655926D2D61300BB0645 /* Category.swift */,
+				C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C72864E926D2A26F00BB0645 /* Category List */ = {
 			isa = PBXGroup;
 			children = (
 				C72864EA26D2A28700BB0645 /* Presentation */,
-				C72864F826D2A34700BB0645 /* Data */,
 			);
 			path = "Category List";
 			sourceTree = "<group>";
@@ -228,15 +239,6 @@
 				C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		C72864F826D2A34700BB0645 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				C72864F926D2A38A00BB0645 /* CategoryListService.swift */,
-				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		C728650626D2A45200BB0645 /* Home */ = {
@@ -395,9 +397,8 @@
 		C75B1CF326CFA8C900C9C527 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C72865A726D3C71800BB0645 /* RoomEntities.swift */,
-				C728655926D2D61300BB0645 /* Category.swift */,
-				C75B1D0026CFB13400C9C527 /* ErrorEntity.swift */,
+				C7ED486026D9446A00E3309C /* Data */,
+				C702B94D26D9428100185748 /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -553,6 +554,16 @@
 				C7B5409B26D139630011192E /* SignInViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C7ED486026D9446A00E3309C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C72864F926D2A38A00BB0645 /* CategoryService.swift */,
+				C72864FE26D2A39F00BB0645 /* CategoryListRepository.swift */,
+				C7ED486826D9473A00E3309C /* ResourceRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,7 +846,7 @@
 				C78944C626CA9D9000C04962 /* WebRepository.swift in Sources */,
 				C79297F026BF05F70022716D /* SceneDelegate.swift in Sources */,
 				C728660D26D5086200BB0645 /* UnjoinUserRepository.swift in Sources */,
-				C72864FA26D2A38A00BB0645 /* CategoryListService.swift in Sources */,
+				C72864FA26D2A38A00BB0645 /* CategoryService.swift in Sources */,
 				C72865D226D3E30500BB0645 /* CreateRoomRepository.swift in Sources */,
 				C72865FD26D4EBD200BB0645 /* None.swift in Sources */,
 				C72865C326D3E28A00BB0645 /* CreateRoom.swift in Sources */,
@@ -844,6 +855,7 @@
 				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
 				C728661D26D50B3900BB0645 /* RoomDetailsRepository.swift in Sources */,
 				C728660826D5084F00BB0645 /* JoinUserRepository.swift in Sources */,
+				C7ED486926D9473A00E3309C /* ResourceRepository.swift in Sources */,
 				C789450526CD39BC00C04962 /* AuthRepository.swift in Sources */,
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C72865A826D3C71800BB0645 /* RoomEntities.swift in Sources */,

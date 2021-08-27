@@ -12,10 +12,17 @@ extension CategoryList {
     class ViewModel: ObservableObject {
         @Published var categories: Loadable<[Category]> = .notRequested
         @Published var error: ErrorEntity? = nil
-        private var categoryListService: CategoryListService = DefaultCategoryListService()
+        private var categoryService: CategoryService = .shared
+        private var cancelBag = CancelBag()
+
+        init() {
+            categoryService.$categories
+                .sink { [weak self] in self?.categories = $0 }
+                .store(in: &cancelBag)
+        }
 
         func loadCategoryList() {
-            categoryListService.categories(subject(\.categories))
+            categoryService.loadIfNeeded()
         }
     }
 }

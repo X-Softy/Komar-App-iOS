@@ -10,4 +10,6 @@ import Foundation
 struct Category: Decodable, Identifiable {
     let id: String
     let title: String
+    let imageId: String
+    var image: Data? = nil
 }

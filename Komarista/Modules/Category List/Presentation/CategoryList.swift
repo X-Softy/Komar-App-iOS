@@ -16,6 +16,10 @@ struct CategoryList: View {
                 List {
                     ForEach(categories) { category in
                         NavigationLink(destination: Rooms(viewModel: .init(of: category))) {
+                            Image(uiImage: UIImage(data: category.image ?? Data()) ?? UIImage())
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
                             Text(category.title)
                         }
                     }

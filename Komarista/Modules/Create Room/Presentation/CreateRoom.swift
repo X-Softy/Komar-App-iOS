@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CreateRoom: View {
     @ObservedObject private(set) var viewModel: ViewModel = .init()
@@ -17,8 +18,14 @@ struct CreateRoom: View {
                     Section {
                         Picker("create.room.picker.title", selection: $viewModel.selectedCategory) {
                             Text("create.room.category.placeholder")
-                            ForEach(categories) {
-                                Text($0.title)
+                            ForEach(categories) { category in
+                                HStack {
+                                    Image(uiImage: UIImage(data: category.image ?? Data()) ?? UIImage())
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 24, height: 24)
+                                    Text(category.title)
+                                }
                             }
                         }.pickerStyle(WheelPickerStyle())
                     }

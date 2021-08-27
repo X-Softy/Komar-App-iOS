@@ -11,6 +11,7 @@ target 'Komarista' do
   # Pods for Komarista
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'GoogleSignIn'
 
   target 'KomaristaTests' do
