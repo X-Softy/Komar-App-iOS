@@ -29,6 +29,10 @@ class CategoryService: ObservableObject {
         }
     }
 
+    func category(by id: String) -> Category? {
+        __categories.first { $0.id == id }
+    }
+
     private func load() {
         categories = .isLoading
         categoryListRepository.categories()

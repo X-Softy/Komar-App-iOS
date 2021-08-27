@@ -23,6 +23,7 @@ struct RoomDetailed: Decodable, Identifiable {
     let id: String
     let title: String
     // Details
+    let categoryId: String
     let creatorUserId: String
     let joinedUserIds: [String]
     let description: String

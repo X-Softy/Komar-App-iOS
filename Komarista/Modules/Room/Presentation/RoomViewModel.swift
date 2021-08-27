@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Room {
     class ViewModel: ObservableObject {
+        @Published var category: Category? = nil
         @Published var details: Loadable<RoomDetailed> = .notRequested
         @Published var comments: [RoomDetailed.Comment] = []
         @Published var button: Button = .inactive
@@ -51,7 +52,7 @@ extension Room {
         }
 
         func loadDetails() {
-            roomService.details(subject(\.details), subject(\.button))
+            roomService.details(subject(\.details), subject(\.category), subject(\.button))
         }
 
         func action() {

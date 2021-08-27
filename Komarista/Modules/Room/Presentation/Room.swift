@@ -14,6 +14,11 @@ struct Room: View {
         ZStack {
             content(of: viewModel.details, $viewModel.error) { details in
                 VStack {
+                    Image(uiImage: UIImage(data: viewModel.category?.image ?? Data()) ?? UIImage())
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                    Text(viewModel.category?.title ?? "")
                     Button(action: viewModel.action) { Text(viewModel.button.rawValue) }
                         .disabled(viewModel.button == .inactive)
                     Text(details.title)

@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol RoomService {
     mutating func details(_ details: Binding<Loadable<RoomDetailed>>,
+                          _ category: Binding<Category?>,
                           _ button: Binding<Room.ViewModel.Button>)
     mutating func delete(_ button: Binding<Room.ViewModel.Button>,
                          _ error: Binding<ErrorEntity?>)
@@ -26,6 +27,7 @@ protocol RoomService {
 struct DefaultRoomService: RoomService {
     private let room: RoomBrief
     private let roomDetailsRepository: RoomDetailsRepository = DefaultRoomDetailsRepository()
+    private let categoryService: CategoryService = .shared
     private let deleteRoomRepository: DeleteRoomRepository = DefaultDeleteRoomRepository()
     private let joinUserRepository: JoinUserRepository = DefaultJoinUserRepository()
     private let unjoinUserRepository: UnjoinUserRepository = DefaultUnjoinUserRepository()
@@ -38,14 +40,17 @@ struct DefaultRoomService: RoomService {
     }
 
     mutating func details(_ details: Binding<Loadable<RoomDetailed>>,
+                          _ category: Binding<Category?>,
                           _ button: Binding<Room.ViewModel.Button>) {
         button.wrappedValue = .inactive
         roomDetailsRepository.details(of: room.id)
             .sinkToLoadable { [self] in
                 guard let session = userSession.state else { return }
                 details.wrappedValue = $0
-                // set button state
                 if case .loaded(let details) = $0 {
+                    // set category state
+                    category.wrappedValue = categoryService.category(by: details.categoryId)
+                    // set button state
                     let userId = session.userId
                     if details.creatorUserId == userId {
                         button.wrappedValue = .delete

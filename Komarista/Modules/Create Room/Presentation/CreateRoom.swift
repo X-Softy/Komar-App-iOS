@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct CreateRoom: View {
     @ObservedObject private(set) var viewModel: ViewModel = .init()
