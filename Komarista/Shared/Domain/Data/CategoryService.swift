@@ -47,6 +47,8 @@ class CategoryService: ObservableObject {
                             }
                         }
                     }
+                } else {
+                    self.categories = $0
                 }
             }
             .store(in: &cancelBag)
