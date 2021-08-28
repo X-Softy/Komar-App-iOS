@@ -21,7 +21,10 @@ struct MyRooms: View {
                     List {
                         ForEach(rooms) { room in
                             NavigationLink(destination: Room(viewModel: .init(room: room))) {
-                                Text(room.title)
+                                VStack {
+                                    Text(room.title)
+                                    Text(room.description)
+                                }
                             }
                         }
                     }

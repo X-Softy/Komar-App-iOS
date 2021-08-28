@@ -48,6 +48,6 @@ struct Room: View {
 
 struct Room_Previews: PreviewProvider {
     static var previews: some View {
-        Room(viewModel: .init(room: .init(id: "ID", title: "Title")))
+        Room(viewModel: .init(room: .init(id: "ID", title: "Title", description: "Description")))
     }
 }

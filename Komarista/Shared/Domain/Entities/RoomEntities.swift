@@ -10,6 +10,7 @@ import Foundation
 struct RoomBrief: Decodable, Identifiable {
     let id: String
     let title: String
+    let description: String
 }
 
 struct RoomDetailed: Decodable, Identifiable {
@@ -22,10 +23,10 @@ struct RoomDetailed: Decodable, Identifiable {
     // Brief
     let id: String
     let title: String
+    let description: String
     // Details
     let categoryId: String
     let creatorUserId: String
     let joinedUserIds: [String]
-    let description: String
     let comments: [Comment]
 }
