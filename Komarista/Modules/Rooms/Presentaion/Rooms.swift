@@ -15,14 +15,15 @@ struct Rooms: View {
             content(of: viewModel.rooms, $viewModel.error) { rooms in
                 List {
                     ForEach(rooms) { room in
-                        NavigationLink(destination: Room(viewModel: .init(room: room))) {
-                            VStack {
-                                Text(room.title)
-                                Text(room.description)
-                            }
+                        ZStack {
+                            NavigationLink(destination: Room(viewModel: .init(room: room))) { EmptyView() }
+                                .frame(width: 0)
+                                .opacity(0)
+                            RoomItem(title: room.title, description: room.description)
                         }
                     }
                 }
+                .listStyle(PlainListStyle())
             }
         }
         .navigationBarTitle("rooms.bar.title")

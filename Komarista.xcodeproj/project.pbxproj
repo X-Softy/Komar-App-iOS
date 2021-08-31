@@ -10,6 +10,7 @@
 		0826552C938792D663CBAED2 /* Pods_Komarista_KomaristaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */; };
 		733DA7B3281CA07A907D8F4A /* Pods_KomaristaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */; };
 		9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */; };
+		C70DE50D26DEAB4E00274C6F /* RoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DE50C26DEAB4E00274C6F /* RoomItem.swift */; };
 		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
 		C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864EB26D2A29F00BB0645 /* CategoryList.swift */; };
 		C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */; };
@@ -96,6 +97,7 @@
 		80709A091B868A4EB7CA4D73 /* Pods-KomaristaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomaristaTests.debug.xcconfig"; path = "Target Support Files/Pods-KomaristaTests/Pods-KomaristaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomaristaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista_KomaristaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70DE50C26DEAB4E00274C6F /* RoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItem.swift; sourceTree = "<group>"; };
 		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C72864EB26D2A29F00BB0645 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				C728657626D2EB2700BB0645 /* ActivityIndicatorView.swift */,
+				C70DE50C26DEAB4E00274C6F /* RoomItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				C72865FD26D4EBD200BB0645 /* None.swift in Sources */,
 				C72865C326D3E28A00BB0645 /* CreateRoom.swift in Sources */,
 				C728656226D2D90000BB0645 /* Publisher+Extension.swift in Sources */,
+				C70DE50D26DEAB4E00274C6F /* RoomItem.swift in Sources */,
 				C7B5410226D282660011192E /* String+Extension.swift in Sources */,
 				C728652026D2CC1B00BB0645 /* MyRoomsViewModel.swift in Sources */,
 				C728661D26D50B3900BB0645 /* RoomDetailsRepository.swift in Sources */,
