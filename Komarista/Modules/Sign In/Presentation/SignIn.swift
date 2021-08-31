@@ -22,7 +22,7 @@ struct SignIn: View {
                         Spacer().frame(width: 16)
                         Image("Pages/Login/google")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .scaledToFit()
                             .frame(width: 32)
                         Spacer()
                         Text(viewModel.label)

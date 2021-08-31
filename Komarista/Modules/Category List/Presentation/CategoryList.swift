@@ -15,15 +15,37 @@ struct CategoryList: View {
             content(of: viewModel.categories, $viewModel.error) { categories in
                 List {
                     ForEach(categories) { category in
-                        NavigationLink(destination: Rooms(viewModel: .init(of: category))) {
-                            Image(uiImage: UIImage(data: category.image ?? Data()) ?? UIImage())
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 24, height: 24)
-                            Text(category.title)
+                        ZStack {
+                            NavigationLink(destination: Rooms(viewModel: .init(of: category))) { EmptyView() }
+                                .frame(width: 0)
+                                .opacity(0)
+                            VStack(spacing: 0) {
+                                Image(uiImage: UIImage(data: category.image ?? Data()) ?? UIImage())
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 160)
+                                    .clipped()
+                                HStack {
+                                    Spacer().frame(width: 16)
+                                    Text(category.title)
+                                        .font(.headline)
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 44)
+                                .background(Color.purple)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .cornerRadius(16)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color.pink, lineWidth: 1)
+                            )
                         }
                     }
                 }
+                .listStyle(PlainListStyle())
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

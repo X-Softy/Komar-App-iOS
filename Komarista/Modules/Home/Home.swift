@@ -12,12 +12,12 @@ struct Home: View {
         TabView {
             NavigationView { CategoryList() }
                 .tabItem {
-                    Image("pages/home/category.list")
+                    Image("Pages/Home/category.list")
                     Text("home.tab.title.category.list")
                 }
             NavigationView { MyRooms() }
                 .tabItem {
-                    Image("pages/home/my.rooms")
+                    Image("Pages/Home/my.rooms")
                     Text("home.tab.title.my.rooms")
                 }
         }
