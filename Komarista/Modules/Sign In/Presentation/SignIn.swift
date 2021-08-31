@@ -12,17 +12,20 @@ struct SignIn: View {
 
     var body: some View {
         HStack {
-            Spacer().frame(width: 16)
+            Spacer()
+                .frame(width: 16)
             VStack {
                 Spacer()
                 Button {
                     viewModel.signIn()
                 } label: {
                     HStack {
-                        Spacer().frame(width: 16)
+                        Spacer()
+                            .frame(width: 16)
                         Image("Pages/Login/google")
                             .resizable()
                             .scaledToFit()
+                            .clipped()
                             .frame(width: 32)
                         Spacer()
                         Text(viewModel.label)
@@ -35,10 +38,12 @@ struct SignIn: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.white)
                 .cornerRadius(16)
-                Spacer().frame(height: 128)
+                Spacer()
+                    .frame(height: 128)
             }
             .frame(maxWidth: .infinity)
-            Spacer().frame(width: 16)
+            Spacer()
+                .frame(width: 16)
         }
         .background(
             Image("Pages/Login/background")
@@ -54,6 +59,5 @@ struct SignIn: View {
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
         SignIn()
-            .previewDevice("iPhone 12")
     }
 }

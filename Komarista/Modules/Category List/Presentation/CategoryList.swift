@@ -27,20 +27,21 @@ struct CategoryList: View {
                                     .frame(height: 160)
                                     .clipped()
                                 HStack {
-                                    Spacer().frame(width: 16)
+                                    Spacer()
+                                        .frame(width: 16)
                                     Text(category.title)
                                         .font(.headline)
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 44)
-                                .background(Color.purple)
+                                .background(Color.komaristaPrimary)
                             }
                             .frame(maxWidth: .infinity)
                             .cornerRadius(16)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.pink, lineWidth: 1)
+                                    .stroke(Color.komaristaPrimary, lineWidth: 1)
                             )
                         }
                     }
