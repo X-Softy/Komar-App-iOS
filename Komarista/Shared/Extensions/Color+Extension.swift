@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension Color {
-    static var _primary: Color { Color(UIColor.systemFill) }
-    static var _secondary: Color { Color(UIColor.secondarySystemFill) }
-    static var _tertiary: Color { Color(UIColor.tertiarySystemFill) }
-    static var _quaternary: Color { Color(UIColor.quaternarySystemFill) }
+    static var _primary: Color { Color("Colors/primary") }
+    static var _secondary: Color { Color("Colors/secondary") }
+    static var _tertiary: Color { Color("Colors/tertiary") }
+    static var _quaternary: Color { Color("Colors/quaternary") }
 }
