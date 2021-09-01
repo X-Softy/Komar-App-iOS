@@ -53,7 +53,9 @@
 "create.room.bar.title" = "Create Room";
 "create.room.picker.title" = "Choose Category";
 "create.room.category.placeholder" = "Choose Category";
-"create.room.title.placeholder" = "Title";
-"create.room.description.placeholder" = "Description";
+"create.room.title" = "Title";
+"create.room.title.placeholder" = "Aa";
+"create.room.description" = "Description";
+"create.room.description.placeholder" = "Aa";
 "create.room.button.title" = "Create";
 "create.room.created" = "Room Created";

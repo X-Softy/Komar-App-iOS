@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = (DefaultAuthRepository.shared as! GIDSignInDelegate)
+        // UI configuration
+        UITextView.appearance().backgroundColor = .clear
         return true
     }
 

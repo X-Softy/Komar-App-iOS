@@ -22,19 +22,67 @@ struct CreateRoom: View {
                                     Image(uiImage: UIImage(data: category.image ?? Data()) ?? UIImage())
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 24, height: 24)
+                                        .frame(width: 28, height: 28)
                                     Text(category.title)
                                 }
                             }
-                        }.pickerStyle(WheelPickerStyle())
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .listRowInsets(EdgeInsets())
+                    }
+                    Section(header: Text("create.room.title")
+                                        .font(.headline))
+                    {
+                        Group {
+                            HStack {
+                                Spacer().frame(width: 16)
+                                VStack {
+                                    Spacer().frame(height: 16)
+                                    TextField("create.room.title.placeholder", text: $viewModel.title)
+                                    Spacer().frame(height: 16)
+                                }
+                                Spacer().frame(width: 16)
+                            }
+                            .cornerRadius(8)
+                            .listRowInsets(EdgeInsets())
+                        }
+                        .background(Color.clear)
+                    }
+                    Section(header: Text("create.room.description")
+                                        .font(.headline)
+                    ) {
+                        Group {
+                            HStack {
+                                Spacer().frame(width: 16)
+                                VStack {
+                                    Spacer().frame(height: 16)
+                                    // if #available(iOS 14.0, *) {
+                                    //    TextEditor(text: $viewModel.description)
+                                    //        .frame(height: 96)
+                                    // } else {
+                                        TextField("create.room.description.placeholder", text: $viewModel.description)
+                                    // }
+                                    Spacer().frame(height: 16)
+                                }
+                                Spacer().frame(width: 16)
+                            }
+                            .cornerRadius(8)
+                            .listRowInsets(EdgeInsets())
+                        }
+                        .background(Color.clear)
                     }
                     Section {
-                        TextField("create.room.title.placeholder", text: $viewModel.title)
-                        TextField("create.room.description.placeholder", text: $viewModel.description)
+                        Button(action: viewModel.createRoom, label: {
+                            Text("create.room.button.title")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 54)
+                                .background(viewModel.disabled ? Color(UIColor.systemGray5) : Color._tertiary)
+                                .cornerRadius(16)
+                        })
+                        .disabled(viewModel.disabled)
+                        .listRowInsets(EdgeInsets())
                     }
-                    Button(action: viewModel.createRoom, label: {
-                        Text("create.room.button.title")
-                    }).disabled(viewModel.disabled)
                 }
             }
         }
@@ -46,6 +94,6 @@ struct CreateRoom: View {
 
 struct CreateRoom_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRoom(viewModel: .init())
+        CreateRoom()
     }
 }
