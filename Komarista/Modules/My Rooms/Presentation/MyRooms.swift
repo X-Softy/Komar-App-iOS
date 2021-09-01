@@ -14,10 +14,54 @@ struct MyRooms: View {
         ZStack {
             content(of: viewModel.rooms, $viewModel.error) { rooms in
                 VStack {
-                    NavigationLink(destination: CreateRoom()) {
-                        Text("my.rooms.button.title")
+                    HStack {
+                        ZStack {
+                            NavigationLink(destination: CreateRoom()) {
+                                ZStack {
+                                    ZStack {
+                                        Text("my.rooms.button.title")
+                                            .foregroundColor(.primary)
+                                            .font(.subheadline)
+                                    }
+                                    .frame(width: 124, height: 40)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color._primary, lineWidth: 1)
+                                    )
+                                }
+                                .frame(width: 128, height: 44)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color._primary, lineWidth: 1)
+                                )
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        ZStack {
+                            Button(action: viewModel.signOut) {
+                                ZStack {
+                                    ZStack {
+                                        Text("auth.sign.out.title")
+                                            .foregroundColor(.primary)
+                                            .font(.subheadline)
+                                    }
+                                    .frame(width: 124, height: 40)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color._secondary, lineWidth: 1)
+                                    )
+                                }
+                                .frame(width: 128, height: 44)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color._secondary, lineWidth: 1)
+                                )
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
-                    Button(action: viewModel.signOut) { Text("auth.sign.out.title") }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 64)
                     List {
                         ForEach(rooms) { room in
                             ZStack {
