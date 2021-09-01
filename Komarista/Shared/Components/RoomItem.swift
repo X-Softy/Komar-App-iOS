@@ -28,23 +28,25 @@ struct RoomItem: View {
                         Spacer()
                             .frame(height: 0)
                         Text(title)
+                            .foregroundColor(.primary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .lineLimit(1)
-                            .font(.title)
+                            .font(.safeTitle3)
                         Text(description)
+                            .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .lineLimit(3)
-                            .font(.body)
+                            .font(.footnote)
                         Spacer()
                     }
                     Spacer()
                         .frame(width: 12)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.komaristaTertiary)
+                .background(Color._secondary)
                 .cornerRadius(16)
                 ZStack {
-                    Color.komaristaSecondary
+                    Color._tertiary
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     Image("Shared/chevron")
                         .resizable()
@@ -57,24 +59,24 @@ struct RoomItem: View {
                 .cornerRadius(16)
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 130)
+            .frame(height: 108)
             .cornerRadius(16)
             Spacer()
                 .frame(width: 4)
         }
-        .frame(height: 138)
+        .frame(height: 116)
         .frame(maxWidth: .infinity)
-        .background(Color.komaristaPrimary)
+        .background(Color._primary)
         .cornerRadius(16)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.komaristaSecondary, lineWidth: 1)
+                .stroke(Color._secondary, lineWidth: 1)
         )
     }
 }
 
 struct RoomItem_Previews: PreviewProvider {
     static var previews: some View {
-        RoomItem(title: "Very Big Title For Room Item", description: "Very Big Description Fot Room Item Preview To See If Three Line Limit Is Working Or Not, Also Some Big Useless Text")
+        RoomItem(title: "Very Big Title For Room Item", description: "Very Big Description Fot Room Item Preview To See If Three Line Limit Is Working Or Not, Also Some Big Useless Text Which Does Not Make Any Sence")
     }
 }

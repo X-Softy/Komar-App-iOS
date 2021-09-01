@@ -11,7 +11,8 @@
 		733DA7B3281CA07A907D8F4A /* Pods_KomaristaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */; };
 		9CC6F056EF65E77612E8FE0E /* Pods_Komarista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D430B4C4C3325B1322887 /* Pods_Komarista.framework */; };
 		C70DE50D26DEAB4E00274C6F /* RoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DE50C26DEAB4E00274C6F /* RoomItem.swift */; };
-		C70DE51126DEDE4600274C6F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DE51026DEDE4600274C6F /* Color+Extension.swift */; };
+		C70DE51326DEEBC300274C6F /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DE51226DEEBC300274C6F /* Font+Extension.swift */; };
+		C70DE51526DF61C200274C6F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DE51426DF61C200274C6F /* Color+Extension.swift */; };
 		C7276EA826BF0884007D2512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7276EA726BF0884007D2512 /* GoogleService-Info.plist */; };
 		C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864EB26D2A29F00BB0645 /* CategoryList.swift */; };
 		C72864F126D2A2ED00BB0645 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */; };
@@ -99,7 +100,8 @@
 		9AF1EA60E5126BEE2024CDDB /* Pods_KomaristaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomaristaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A918219472D0C4FB8EE749 /* Pods_Komarista_KomaristaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Komarista_KomaristaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70DE50C26DEAB4E00274C6F /* RoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItem.swift; sourceTree = "<group>"; };
-		C70DE51026DEDE4600274C6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		C70DE51226DEEBC300274C6F /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		C70DE51426DF61C200274C6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C7276EA726BF0884007D2512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C72864EB26D2A29F00BB0645 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		C72864F026D2A2ED00BB0645 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
@@ -450,7 +452,8 @@
 				C7B540C226D180AB0011192E /* ObservableObject+Extension.swift */,
 				C728656126D2D90000BB0645 /* Publisher+Extension.swift */,
 				C7B5410126D282660011192E /* String+Extension.swift */,
-				C70DE51026DEDE4600274C6F /* Color+Extension.swift */,
+				C70DE51426DF61C200274C6F /* Color+Extension.swift */,
+				C70DE51226DEEBC300274C6F /* Font+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -867,6 +870,7 @@
 				C78944ED26CD0E3F00C04962 /* Bundle+Extension.swift in Sources */,
 				C72865A826D3C71800BB0645 /* RoomEntities.swift in Sources */,
 				C72864EC26D2A29F00BB0645 /* CategoryList.swift in Sources */,
+				C70DE51526DF61C200274C6F /* Color+Extension.swift in Sources */,
 				C72864FF26D2A39F00BB0645 /* CategoryListRepository.swift in Sources */,
 				C728660326D5083A00BB0645 /* DeleteRoomRepository.swift in Sources */,
 				C728658E26D3AFA200BB0645 /* RoomsViewModel.swift in Sources */,
@@ -880,10 +884,10 @@
 				C728659326D3AFDD00BB0645 /* RoomsService.swift in Sources */,
 				C72865DB26D412A700BB0645 /* Root.swift in Sources */,
 				C728657726D2EB2700BB0645 /* ActivityIndicatorView.swift in Sources */,
+				C70DE51326DEEBC300274C6F /* Font+Extension.swift in Sources */,
 				C728652526D2CC2C00BB0645 /* MyRoomsService.swift in Sources */,
 				C78944E626CC424400C04962 /* APIRequestBuilderFactory.swift in Sources */,
 				C78944CB26CA9DF900C04962 /* HTTPRequestBuilder.swift in Sources */,
-				C70DE51126DEDE4600274C6F /* Color+Extension.swift in Sources */,
 				C7B540BE26D174320011192E /* CancelBag.swift in Sources */,
 				C728661226D5087500BB0645 /* AddCommentRepository.swift in Sources */,
 				C728661826D5088700BB0645 /* RoomService.swift in Sources */,

@@ -24,24 +24,25 @@ struct CategoryList: View {
                                     .resizable()
                                     .scaledToFill()
                                     .frame(maxWidth: .infinity)
-                                    .frame(height: 160)
+                                    .frame(height: 128)
                                     .clipped()
                                 HStack {
                                     Spacer()
                                         .frame(width: 16)
                                     Text(category.title)
-                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                        .font(.safeTitle2)
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(Color.komaristaPrimary)
+                                .frame(height: 36)
+                                .background(Color._primary)
                             }
                             .frame(maxWidth: .infinity)
                             .cornerRadius(16)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.komaristaPrimary, lineWidth: 1)
+                                    .stroke(Color._secondary, lineWidth: 1)
                             )
                         }
                     }

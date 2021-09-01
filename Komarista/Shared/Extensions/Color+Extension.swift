@@ -8,7 +8,8 @@
 import SwiftUI
 
 extension Color {
-    static var komaristaPrimary: Color { .purple }
-    static var komaristaSecondary: Color { .pink }
-    static var komaristaTertiary: Color { .white }
+    static var _primary: Color { Color(UIColor.systemFill) }
+    static var _secondary: Color { Color(UIColor.secondarySystemFill) }
+    static var _tertiary: Color { Color(UIColor.tertiarySystemFill) }
+    static var _quaternary: Color { Color(UIColor.quaternarySystemFill) }
 }
