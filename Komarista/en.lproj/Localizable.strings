@@ -49,6 +49,10 @@
 "room.comments.title" = "Comments";
 "room.delete.success" = "Room Deleted";
 "room.comment.placeholder" = "Aa";
+"room.button.inactive" = "Disabled";
+"room.button.delete" = "Delete";
+"room.button.join" = "Join";
+"room.button.unjoin" = "Unjoin";
 
 /* Create Room */
 "create.room.bar.title" = "Create Room";
