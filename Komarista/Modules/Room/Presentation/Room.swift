@@ -107,6 +107,7 @@ struct Room: View {
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 Text(comment.comment)
                                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .fixedSize(horizontal: false, vertical: true)
                                             }
                                             .frame(maxWidth: .infinity)
                                             .padding(12)
