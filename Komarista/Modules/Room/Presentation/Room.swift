@@ -50,7 +50,7 @@ struct Room: View {
                                     Spacer().frame(width: 12)
                                     VStack(alignment: .leading, spacing: 6) {
                                         Spacer().frame(height: 2)
-                                        Text("Description")
+                                        Text("room.description.title")
                                             .font(.safeTitle3)
                                             .fontWeight(.bold)
                                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -67,7 +67,7 @@ struct Room: View {
                                         .stroke(Color._tertiary, lineWidth: 4)
                                 )
                                 .cornerRadius(16)
-                                Text("Comments")
+                                Text("room.comments.title")
                                     .font(.safeTitle2)
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity, alignment: .leading)
