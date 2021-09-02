@@ -20,6 +20,7 @@ protocol RoomService {
                          _ error: Binding<ErrorEntity?>)
     mutating func add(comment: String,
                       _ comments: Binding<[RoomDetailed.Comment]>,
+                      _ input: Binding<String>,
                       _ disabled: Binding<Bool>,
                       _ error: Binding<ErrorEntity?>)
 }
@@ -111,6 +112,7 @@ struct DefaultRoomService: RoomService {
 
     mutating func add(comment: String,
                       _ comments: Binding<[RoomDetailed.Comment]>,
+                      _ input: Binding<String>,
                       _ disabled: Binding<Bool>,
                       _ error: Binding<ErrorEntity?>) {
         disabled.wrappedValue = true
@@ -125,6 +127,7 @@ struct DefaultRoomService: RoomService {
                 guard let session = userSession.state else { return }
                 let comment = RoomDetailed.Comment(userId: session.userId, comment: comment)
                 comments.wrappedValue.append(comment)
+                input.wrappedValue = ""
             }
             .store(in: &cancelBag)
     }

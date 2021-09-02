@@ -65,7 +65,7 @@ extension Room {
         }
 
         func send() {
-            roomService.add(comment: comment, subject(\.comments), subject(\.disabled), subject(\.error))
+            roomService.add(comment: comment, subject(\.comments), subject(\.comment), subject(\.disabled), subject(\.error))
         }
     }
 }

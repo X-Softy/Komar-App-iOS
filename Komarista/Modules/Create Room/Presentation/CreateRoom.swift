@@ -78,7 +78,7 @@ struct CreateRoom: View {
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 54)
                                 .background(viewModel.disabled ? Color(UIColor.systemGray5) : Color._tertiary)
-                                .cornerRadius(16)
+                                .cornerRadius(8)
                         })
                         .disabled(viewModel.disabled)
                         .listRowInsets(EdgeInsets())
