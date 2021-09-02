@@ -10,6 +10,25 @@ import SwiftUI
 struct Room: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
+    struct ButtonViewModel {
+        let text: LocalizedStringKey
+        let textColor: Color
+        let backgroundColor: Color
+        let borderColor: Color
+
+        init(
+            text: LocalizedStringKey,
+            backgroundColor: Color,
+            textColor: Color = .white,
+            borderColor: Color = .white
+        ) {
+            self.text = text
+            self.backgroundColor = backgroundColor
+            self.textColor = textColor
+            self.borderColor = borderColor
+        }
+    }
+
     var body: some View {
         ZStack {
             content(of: viewModel.details, $viewModel.error) { details in
@@ -27,15 +46,16 @@ struct Room: View {
                                         .cornerRadius(16)
                                         .clipped()
                                     Button(action: viewModel.action) {
-                                        Text(viewModel.button.rawValue)
-                                            .foregroundColor(.primary)
+                                        let model = viewModel.button.viewModel
+                                        Text(model.text)
+                                            .foregroundColor(model.textColor)
                                             .font(.headline)
                                             .frame(width: 128, height: 44)
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 16)
-                                                    .stroke(Color._primary, lineWidth: 4)
+                                                    .stroke(model.borderColor, lineWidth: 4)
                                             )
-                                            .background(Color._secondary)
+                                            .background(model.backgroundColor)
                                             .cornerRadius(16)
                                     }
                                     .disabled(viewModel.button == .inactive)
@@ -122,12 +142,14 @@ struct Room: View {
                                         .cornerRadius(16)
                                         Button(action: viewModel.send, label: {
                                             ZStack {
-                                                Color._tertiary
+                                                (viewModel.disabled ? Color(UIColor.systemGray5) : Color._tertiary)
                                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                                                 Image("Shared/chevron")
+                                                    .renderingMode(.template)
                                                     .resizable()
                                                     .scaledToFit()
                                                     .frame(height: 32)
+                                                    .colorMultiply(.secondary)
                                                     .clipped()
                                             }
                                             .frame(width: 44)
@@ -160,6 +182,26 @@ struct Room: View {
         .navigationBarTitle("room.bar.title")
         .alert(error: $viewModel.error)
         .onAppear(perform: viewModel.loadDetails)
+    }
+}
+
+fileprivate extension Room.ViewModel.Button {
+    var viewModel: Room.ButtonViewModel {
+        switch self {
+        case .inactive:
+            return .init(
+                text: "Disabled",
+                backgroundColor: Color(UIColor.lightGray).opacity(0.25),
+                textColor: Color(UIColor.lightGray),
+                borderColor: Color(UIColor.lightGray)
+            )
+        case .delete:
+            return .init(text: "Delete", backgroundColor: .red)
+        case .join:
+            return .init(text: "Join", backgroundColor: .green)
+        case .unjoin:
+            return .init(text: "Unjoin", backgroundColor: Color(UIColor.lightGray).opacity(0.5))
+        }
     }
 }
 
