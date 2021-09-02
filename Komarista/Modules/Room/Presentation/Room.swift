@@ -55,6 +55,7 @@ struct Room: View {
                                             .fontWeight(.bold)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                         Text(details.description)
+                                            .foregroundColor(.secondary)
                                         Spacer().frame(height: 4)
                                     }
                                     Spacer().frame(width: 12)
@@ -81,6 +82,7 @@ struct Room: View {
                                             ForEach(viewModel.comments) { comment in
                                                 VStack(spacing: 6) {
                                                     Text(comment.userId)
+                                                        .foregroundColor(.secondary)
                                                         .font(.subheadline)
                                                         .fontWeight(.bold)
                                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -89,7 +91,7 @@ struct Room: View {
                                                 }
                                                 .frame(maxWidth: .infinity)
                                                 .padding(12)
-                                                .background(Color._primary)
+                                                .background(Color._secondary)
                                                 .overlay(
                                                     RoundedRectangle(cornerRadius: 16)
                                                         .stroke(Color._tertiary, lineWidth: 4)
@@ -100,7 +102,7 @@ struct Room: View {
                                         }
                                         Spacer().frame(width: 12)
                                     }
-                                    .background(Color._secondary)
+                                    .background(Color._primary)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 16)
                                             .stroke(Color._tertiary, lineWidth: 4)
