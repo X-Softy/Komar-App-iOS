@@ -13,11 +13,15 @@ struct Home: View {
             NavigationView { CategoryList() }
                 .tabItem {
                     Image("Pages/Home/category.list")
+                        .renderingMode(.template)
+                        .colorMultiply(.accentColor)
                     Text("home.tab.title.category.list")
                 }
             NavigationView { MyRooms() }
                 .tabItem {
                     Image("Pages/Home/my.rooms")
+                        .renderingMode(.template)
+                        .colorMultiply(.accentColor)
                     Text("home.tab.title.my.rooms")
                 }
         }
